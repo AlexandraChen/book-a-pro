@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
   before_action :is_same_user?, only: [:edit]
 
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def show
+  	@user = User.find(current_user.id)
+  end
 
   # def edit
   #   @user = User.find(params[:id])
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   #   render :edit
   # end
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:user).permit(:bio, :latitude, :longitude)
-  # end
+  def user_params
+    params.require(:user).permit()
+  end
 end

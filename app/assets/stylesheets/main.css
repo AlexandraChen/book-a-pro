@@ -1,3 +1,9 @@
 header,footer{
 	text-align: center;
 }
+
+.prof-pic{
+	border: 0.1em solid black;
+	height: 10em;
+	width: 10em;
+}

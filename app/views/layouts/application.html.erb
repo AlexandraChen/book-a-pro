@@ -12,17 +12,28 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   <% end %>
-  <header>
-    <h1> Welcome to Book-a-Pro </h1>
-    <% if current_user %>
-      <p>Log in as <%= current_user.name%> |
-        <%= link_to 'Log out', '/logout' %></p>
-    <% else %>
-      <p><%= link_to "Sign up", new_user_registration_path %>
-      |
-      <%= link_to 'Log in', new_user_session_path %></p>
-    <% end %>
-  </header>
+<header>
+  <h1> Welcome to Book-a-Pro </h1>
+  <div class="container">
+    <div class="row">
+      <% if current_user %>
+        <div class="pull-left">
+          <p>Hi, <%= link_to current_user.name, user_path(current_user.name)%>!</p>
+         </div>
+         <div class="pull-right">
+          <p><%= link_to 'Log out', '/logout' %></p>
+        </div>
+      <% else %>
+        <div class="pull-right">
+          <p><%= link_to "Sign up", new_user_registration_path %>
+          |
+          <%= link_to 'Log in', new_user_session_path %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>
+<hr>
 <div class="container">
 		<div class="row">
 			<%= yield %>
