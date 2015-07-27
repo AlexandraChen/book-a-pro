@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
   before_action :is_same_user?, only: [:edit]
-
+ 
   def show
   	@user = User.find(current_user.id)
   end

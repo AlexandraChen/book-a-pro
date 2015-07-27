@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <h2>Create Professional Profile</h2>
+      <%= form_for @pro_user, url: user_professionals_path(current_user.id) do |f| %>
+        <%= f.label "Title" %>
+        <%= f.text_field :title, class: "form-control", placeholder:"title" %>
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", placeholder: "Describe yourself and the services you offer"%>
+        <br>
+        <%= f.submit "Create Pro Profile", class: "btn btn-default col-sm-12"%>
+      <% end %>
+    </form>
+</div>
