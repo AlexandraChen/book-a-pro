@@ -26,6 +26,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'figaro'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -49,5 +50,6 @@ group :development, :test do
 	gem 'binding_of_caller'
 	gem 'pry-rails'
 	gem 'quiet_assets'
+  gem 'letter_opener'
 end
 

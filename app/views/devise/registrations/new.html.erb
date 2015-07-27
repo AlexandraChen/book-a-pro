@@ -5,6 +5,11 @@
     <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: :name %>
+    </div>
+
+    <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: :email, type: "email" %>
     </div>
@@ -21,7 +26,7 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: :password_confirmation  %>
     </div>
-
+    <br />
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-default col-sm-12", id: "submit" %>
     </div>
