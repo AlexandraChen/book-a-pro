@@ -42,4 +42,7 @@ Rails.application.configure do
   
   #letter opener gem
   config.action_mailer.delivery_method = :letter_opener
+
+  #Images active recorde paperclip
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
