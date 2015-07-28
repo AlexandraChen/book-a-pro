@@ -16,3 +16,8 @@ header, footer{
 	color: white;
 	background-color: black;
 }
+
+.all-pros, #search-form{
+	text-align: center;
+}
+
