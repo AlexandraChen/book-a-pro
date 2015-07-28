@@ -10,7 +10,8 @@ class Professional < ActiveRecord::Base
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
 
  	def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("title like ?", "%#{query}%") 
-  end
+    	where("title like ?", "%#{query}%")
+    	where("location like ?", "%#{query}%")
+    	#how to query by professional.user.name??
+ 	end
 end
