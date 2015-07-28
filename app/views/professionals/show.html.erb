@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-1">
+			<%= image_tag @pro_user.prof_pic.url(:medium)%>
+		</div>
+		<div class="col-sm-4 users">
+			<p class="pro-name"><%= current_user.name.capitalize %></p>
+			<p class="pro-title"><%= @pro_user.title %></p>
+			<p class="pro-description"><%= @pro_user.description %></p>
+		</div>
+		
+	</div>
+</div>

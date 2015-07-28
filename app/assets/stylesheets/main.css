@@ -4,6 +4,21 @@ header, footer{
 
 .prof-pic{
 	border: 0.1em solid black;
-	height: 10em;
-	width: 10em;
+	height: 18.75em;
+	width: 18.75em;
+}
+
+.pro-name{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.pro-title{
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.pro-description{
+	font-size: 1.1em;
+	padding-top: 1em;
 }

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get '/logout', to: 'devise/sessions#destroy', as: :signout
   end
 
-  get '/users/profile/:user'               => 'users#show', as: 'user'
+  get '/users/profile/:id'               => 'users#show', as: 'user'
   get '/users/profile/edit_password/:user' => 'users#edit_password', as: "user/edit_password"
 
   resources :users, only: [:edit] do
