@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728071754) do
+ActiveRecord::Schema.define(version: 20150728104521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20150728071754) do
     t.string   "prof_pic_content_type"
     t.integer  "prof_pic_file_size"
     t.datetime "prof_pic_updated_at"
+    t.float    "price_hr"
+    t.string   "location"
   end
 
   create_table "users", force: :cascade do |t|

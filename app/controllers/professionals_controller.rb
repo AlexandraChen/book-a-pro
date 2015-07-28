@@ -16,7 +16,7 @@ class ProfessionalsController < ApplicationController
 		if @pro_user.valid?
 			@pro_user.save
 			redirect_to user_professional_path(current_user.id, @pro_user.id),
-					notice: 'Professional profile succesfully create!'
+					notice: 'Professional profile succesfully created!'
 		else
 			redirect_to new_user_professional_path(current_user.id),
 					notice: 'Something went wrong :( Please try again'
@@ -38,6 +38,6 @@ class ProfessionalsController < ApplicationController
 
 	private
 	def pro_params
-		params.require(:professional).permit(:title, :description, :prof_pic)
+		params.require(:professional).permit(:title, :description, :prof_pic, :price_hr, :location)
 	end
 end
