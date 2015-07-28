@@ -1,8 +1,18 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-2 col-sm-offset-1 prof-pic">
-			<p>User pic :) </p>
+		<div class="col-sm-3 col-sm-offset-1">
+			<% if @user.prof_pic_file_name === nil%>
+				<div class="prof-pic">
+					<p>Prof pic avatar here</p>
+				</div>
+			<% else %>
+				<%= image_tag @user.prof_pic.url(:medium), class: "prof-pic"%>
+			<% end %>	
+			<% if current_user.id === @user.id%>
+				<p class="edit-pic-link"><%= link_to "Edit profile picture", user_edit_profpic_path(current_user.id) %><p>
+			<% end %>
 		</div>
+
 		<div class="col-sm-4 users">
 			<p>Hi, <%= @user.name %></p>
 			<p>E-mail: <%= @user.email %></p>

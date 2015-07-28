@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :is_same_user?, only: [:edit]
  
   def show
-  	@user = User.find(current_user.id)
+  	@user = User.find(params[:id])
   end
 
   def edit_password
@@ -35,10 +35,24 @@ class UsersController < ApplicationController
   #   end
   #   render :edit
   # end
+  def edit_profpic
+    @user = current_user
+  end
+
+  def update_profpic
+    @user = current_user
+    @user.update_attributes(user_params)
+    if @user.valid?
+      @user.save
+      redirect_to user_path(@user.id), notice: "Profile picture succesfully saved"
+      return
+    end
+    render :edit_profpic
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :current_password)
+    params.require(:user).permit(:password, :password_confirmation, :current_password, :prof_pic)
   end
 end
