@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   get '/professional/:id/edit_profpic'     => 'professionals#edit_profpic', as:'professional/edit_profpic'
   patch '/professional/:id/edit_profpic'   => 'professionals#update_profpic'
-  get '/users/:id/edit_profpic'     => 'users#edit_profpic', as:'user/edit_profpic'
-  patch '/users/:id/edit_profpic'   => 'users#update_profpic'
+  get '/users/:id/edit_profpic'            => 'users#edit_profpic', as:'user/edit_profpic'
+  patch '/users/:id/edit_profpic'          => 'users#update_profpic'
+
+  get 'professionals/:id'                  => 'professionals#show', as: 'professional'
 
 end

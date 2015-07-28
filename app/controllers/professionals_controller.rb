@@ -1,5 +1,5 @@
+
 class ProfessionalsController < ApplicationController
-	before_action :authenticate_user!
 	
 	def show
 		@pro_user = Professional.find(params[:id])	
