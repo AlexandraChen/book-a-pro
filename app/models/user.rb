@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, 
          :timeoutable, :confirmable
 
-  has_one :professional
+  has_one :professional, dependent: :destroy
 
 end

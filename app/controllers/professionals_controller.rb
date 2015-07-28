@@ -15,9 +15,11 @@ class ProfessionalsController < ApplicationController
 
 		if @pro_user.valid?
 			@pro_user.save
-			redirect_to user_professional_path(current_user.id, @pro_user.id), notice: 'Professional profile succesfully create!'
+			redirect_to user_professional_path(current_user.id, @pro_user.id),
+					notice: 'Professional profile succesfully create!'
 		else
-			redirect_to new_user_professional_path(current_user.id), notice: 'Something went wrong :( Please try again'
+			redirect_to new_user_professional_path(current_user.id),
+					notice: 'Something went wrong :( Please try again'
 		end
 	end
 
@@ -25,6 +27,10 @@ class ProfessionalsController < ApplicationController
 	end
 
 	def destroy
+		@pro_user = current_user.professional	
+		@pro_user.destroy
+		redirect_to user_path(current_user.id),
+				notice: "Professional profile successfuly deleted"
 	end
 
 
