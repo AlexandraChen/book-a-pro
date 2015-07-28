@@ -1,7 +1,8 @@
 .prof-pic{
-	border: 0.1em solid black;
+	border: 0.1em solid #E9E9E9;
 	height: 18.75em;
 	width: 18.75em;
+	text-align: center;
 }
 
 .pro-name{
@@ -23,3 +24,12 @@
 .edit-link{
 	text-align: right;
 }
+.edit-pic-link{
+	text-align: center;
+	padding-top: 0.5em;
+}
+
+.price-hr, .pro-location{
+	text-align: center;
+}
+

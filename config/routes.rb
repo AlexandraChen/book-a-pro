@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     get '/logout', to: 'devise/sessions#destroy', as: :signout
   end
 
-  get '/users/profile/:id'               => 'users#show', as: 'user'
+  get '/users/profile/:id'                 => 'users#show', as: 'user'
   get '/users/profile/edit_password/:user' => 'users#edit_password', as: "user/edit_password"
+  
 
   resources :users, only: [:edit] do
 	  collection do
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
 	resources :users, only: [:show] do
 		resources :professionals
 	end
+
+  get '/professional/:id/edit_profpic'     => 'professionals#edit_profpic', as:"professional/edit_profpic"
+  patch '/professional/:id/edit_profpic'   => 'professionals#update_profpic'
 
 end

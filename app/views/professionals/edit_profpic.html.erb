@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <h2>Edit profile picture</h2>
+  <br>
+    <%= form_for(@pro_user, :url => { :action => :update_profpic} )do |f| %>
+      <%= f.file_field :prof_pic %>
+      <br>
+      <%= f.submit "Update profile", class: "btn btn-default col-sm-12"%>
+    <% end %>
+  </form>
+</div>
+

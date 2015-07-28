@@ -2,7 +2,7 @@ class ProfessionalsController < ApplicationController
 	before_action :authenticate_user!
 	
 	def show
-		@pro_user = current_user.professional	
+		@pro_user = Professional.find(params[:id])	
 	end
 
 	def new
@@ -43,8 +43,20 @@ class ProfessionalsController < ApplicationController
 				notice: "Professional profile successfuly deleted"
 	end
 
+	def edit_profpic
+		@pro_user = current_user.professional
+	end
 
-
+	def update_profpic
+		@pro_user = current_user.professional
+    @pro_user.update_attributes(pro_params)
+    if @pro_user.valid?
+      @pro_user.save
+      redirect_to user_professional_path(current_user.id, @pro_user.id), notice: "Profile picture succesfully"
+      return
+    end
+    render :edit_profpic
+	end
 
 	private
 	def pro_params

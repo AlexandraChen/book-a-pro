@@ -1,9 +1,19 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-1">
-			<%= image_tag @pro_user.prof_pic.url(:medium)%>
+		<div class="col-sm-3 col-sm-offset-1">
+			<%= image_tag @pro_user.prof_pic.url(:medium), class: "prof-pic"%>
+			<% if current_user.id === @pro_user.user_id %>
+			<p class="edit-pic-link"><%= link_to "Edit profile picture", professional_edit_profpic_path(@pro_user.id)  %><p>
+			<% end %>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<p class="price-hr"><%= @pro_user.price_hr%></p>
+					<p class="pro-location"><%= @pro_user.location %></p>
+				</div>
+			</div>
+
 		</div>
-		<div class="col-sm-4 users">
+		<div class="col-sm-5 users">
 			<div class="row">
 				<div class="col-sm-6">
 					<p class="pro-name"><%= current_user.name.capitalize %> </p>
@@ -13,8 +23,7 @@
 					<p class="edit-link"><%= link_to "Edit profile", edit_user_professional_path(current_user.id, current_user.professional.id) %> </p><!-- change to corrent path -->
 			<% end %>
 					</div>
-			</div>
-			
+			</div>			
 			<p class="pro-title"><%= @pro_user.title %></p>
 			<p class="pro-description"><%= @pro_user.description %></p>
 			<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
