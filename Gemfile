@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'figaro'
-gem "paperclip", "~> 4.3"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 
 # Use ActiveModel has_secure_password

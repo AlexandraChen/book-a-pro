@@ -1,6 +1,6 @@
 class ProfessionalsController < ApplicationController
 	before_action :authenticate_user!
-
+	
 	def new
 		@pro_user = Professional.new
 	end
@@ -28,6 +28,6 @@ class ProfessionalsController < ApplicationController
 
 	private
 	def pro_params
-		params.require(:professional).permit(:title, :description)
+		params.require(:professional).permit(:title, :description, :prof_pic)
 	end
 end
