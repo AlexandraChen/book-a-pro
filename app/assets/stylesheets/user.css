@@ -1,1 +1,14 @@
-user.css
+.prof-pic-thumb{
+	border: 0.1em solid #E9E9E9;
+	height: 7.3em;
+	width: auto;
+}
+
+
+.prof-pic-small{
+	border: 0.1em solid #E9E9E9;
+	height: 9.475em;
+	width: 9.475em;
+	vertical-align: middle;
+	text-align: center;
+}
