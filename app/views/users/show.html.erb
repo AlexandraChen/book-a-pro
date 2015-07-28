@@ -1,13 +1,14 @@
+
 <div class="container">
 	<div class="row">
-		<div class="col-sm-3 col-sm-offset-1">
-			<% if @user.prof_pic_file_name === nil%>
-				<div class="prof-pic">
-					<p>Prof pic avatar here</p>
-				</div>
-			<% else %>
-				<%= image_tag @user.prof_pic.url(:medium), class: "prof-pic"%>
-			<% end %>	
+		<div class="col-sm-4 col-sm-offset-2">
+			<div class="prof-pic">
+				<% if @user.prof_pic_file_name === nil%>
+					<p>Prof pic avatar here</p>	
+				<% else %>
+					<%= image_tag @user.prof_pic.url(:medium)%>
+				<% end %>
+			</div>	
 			<% if current_user.id === @user.id%>
 				<p class="edit-pic-link"><%= link_to "Edit profile picture", user_edit_profpic_path(current_user.id) %><p>
 			<% end %>

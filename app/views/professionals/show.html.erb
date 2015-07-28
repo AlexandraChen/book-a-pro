@@ -1,21 +1,19 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-3 col-sm-offset-1">
-			<%= image_tag @pro_user.prof_pic.url(:medium), class: "prof-pic"%>
+		<div class="col-sm-4 col-sm-offset-1">
+			<div class="prof-pic">
+				<%= image_tag @pro_user.prof_pic.url(:medium)%>
+			</div>
 			<% if current_user %>
 				<% if current_user.id === @pro_user.user_id %>
 				<p class="edit-pic-link"><%= link_to "Edit profile picture", professional_edit_profpic_path(@pro_user.id)  %><p>
 				<% end %>
 			<% end %>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4">
-					<p class="price-hr"><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
-					<p class="pro-location"><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
-				</div>
-			</div>
-
+			<br>
+			<p class="price-hr"><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
+			<p class="pro-location"><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
 		</div>
-		<div class="col-sm-5 users">
+		<div class="col-sm-4 users">
 			<div class="row">
 				<div class="col-sm-6">
 					<p class="pro-name"><%= @pro_user.user.name %> </p>

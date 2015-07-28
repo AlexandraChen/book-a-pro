@@ -7,10 +7,26 @@
   		<% end %>
 		</div>
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 all-pros">
 			<% @pro_users.each do |pro| %>
-				<p> <%= link_to pro.title, professional_path(pro.id) %> </p>
+				<div class="media">
+				  <div class="media-left media-left">
+				    <a href="#">
+				    	<div class="prof-pic-thumb">
+				     	 <%= image_tag pro.prof_pic.url(:thumb)%>
+				     	</div>
+				    </a>
+				  </div>
+				  <div class="media-body">
+				  	<div class="row">
+							<div class="col-sm-12">
+				   			<h4 class="media-heading pull-left"> <%= pro.user.name %></h4>
+				   		</div>
+				   	</div>
+				   	<p class="pull-left"> <%= link_to pro.title, professional_path(pro.id)%></p>
+				</div>
 			<% end %>
 		</div>
 	</div>
