@@ -9,8 +9,13 @@
 </head>
 <body>
   <% if notice %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notice-alert">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div class="notice-alert">
+      <p class="alert"><%= alert %></p>
+    </div>
   <% end %>
 <header>
   <h1> Welcome to Book-a-Pro </h1>

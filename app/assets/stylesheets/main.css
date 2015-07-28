@@ -8,3 +8,11 @@ header, footer{
 	width: 18.75em;
 	text-align: center;
 }
+
+.notice-alert{
+	height: 2em;
+	width: 100%;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
