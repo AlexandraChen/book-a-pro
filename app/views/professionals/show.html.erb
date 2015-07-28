@@ -4,7 +4,17 @@
 			<%= image_tag @pro_user.prof_pic.url(:medium)%>
 		</div>
 		<div class="col-sm-4 users">
-			<p class="pro-name"><%= current_user.name.capitalize %></p>
+			<div class="row">
+				<div class="col-sm-6">
+					<p class="pro-name"><%= current_user.name.capitalize %> </p>
+				</div>
+			<% if current_user.id === @pro_user.user_id %>
+				<div class="col-sm-6 pull-right edit-link">
+					<p class="edit-link"><%= link_to "Edit profile", edit_user_professional_path(current_user.id, current_user.professional.id) %> </p><!-- change to corrent path -->
+			<% end %>
+					</div>
+			</div>
+			
 			<p class="pro-title"><%= @pro_user.title %></p>
 			<p class="pro-description"><%= @pro_user.description %></p>
 			<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>

@@ -1,0 +1,25 @@
+.prof-pic{
+	border: 0.1em solid black;
+	height: 18.75em;
+	width: 18.75em;
+}
+
+.pro-name{
+	font-size: 2em;
+	font-weight: bold;
+	padding-bottom: 0;
+}
+
+.pro-title{
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.pro-description{
+	font-size: 1.1em;
+	padding-top: 1em;
+}
+
+.edit-link{
+	text-align: right;
+}
