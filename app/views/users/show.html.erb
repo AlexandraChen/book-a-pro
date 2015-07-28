@@ -1,12 +1,12 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-2">
-			<div class="prof-pic">
+		<div class="col-sm-2 col-sm-offset-1">
+			<div class="prof-pic-small">
 				<% if @user.prof_pic_file_name === nil%>
 					<p>Prof pic avatar here</p>	
 				<% else %>
-					<%= image_tag @user.prof_pic.url(:medium)%>
+					<%= image_tag @user.prof_pic.url(:small)%>
 				<% end %>
 			</div>	
 			<% if current_user.id === @user.id%>
@@ -14,7 +14,7 @@
 			<% end %>
 		</div>
 
-		<div class="col-sm-4 users">
+		<div class="col-sm-5 users">
 			<p>Hi, <%= @user.name %></p>
 			<p>E-mail: <%= @user.email %></p>
 			<p>Password: ******* <%= link_to "Change your password", user_edit_password_path(current_user.id) %></p>

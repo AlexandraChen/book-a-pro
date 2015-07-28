@@ -2,14 +2,6 @@ header, footer, .all-pros, #search-form{
 	text-align: center;
 }
 
-.prof-pic{
-	border: 0.1em solid #E9E9E9;
-	height: 24.37em;
-	width: auto;
-	vertical-align: middle;
-	text-align: center;
-}
-	
 .notice-alert{
 	height: 2em;
 	width: 100%;
@@ -18,8 +10,3 @@ header, footer, .all-pros, #search-form{
 	background-color: black;
 }
 
-.prof-pic-thumb{
-	border: 0.1em solid #E9E9E9;
-	height: 7.3em;
-	width: auto;
-}

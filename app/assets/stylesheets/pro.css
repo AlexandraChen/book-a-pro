@@ -19,10 +19,18 @@
 }
 .edit-pic-link{
 	text-align: center;
-	padding-top: 0.5em;
+	padding-top: 2em;
 }
 
 .price-hr, .pro-location{
 	text-align: center;
 }
 
+.prof-pic{
+	border: 0.1em solid #E9E9E9;
+	height: 22em;
+	width: 22em;
+	vertical-align: middle;
+	text-align: center;
+	margin-left: 2.5em;
+}
