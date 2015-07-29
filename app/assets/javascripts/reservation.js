@@ -11,4 +11,8 @@ $(function () {
 		$(event.currentTarget).next().toggle()
 	})
 
+	$("#search").on("click", function(){
+		$(this).val("")
+	})
+
 })

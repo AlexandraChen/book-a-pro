@@ -16,9 +16,7 @@ class Professional < ActiveRecord::Base
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
 
  	def self.search(query)
-    	where("title like ?", "%#{query}%")
-    	where("location like ?", "%#{query}%")
-
-    	#how to query by professional.user.name??
+    	where("lower(title) LIKE ? OR lower(location) like ?", "%#{query}%".downcase, "%#{query}%".downcase)
+    	#how to query by professional.user.name?? self.user.name ?
  	end
 end

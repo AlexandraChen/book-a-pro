@@ -4,18 +4,26 @@
 			<div class="prof-pic">
 				<%= image_tag @pro_user.prof_pic.url(:medium)%>
 			</div>
-			<% if current_user %>
-				<% if current_user.id === @pro_user.user_id %>
+			<% if current_user && current_user.id === @pro_user.user_id %>
 				<p class="edit-pic-link"><%= link_to "Edit profile picture", professional_edit_profpic_path(@pro_user.id)  %><p>
-				<% end %>
 			<% end %>
 			<div class="pro-booking">
 				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
 				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
-			<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
-				<div class="reservation-form" hidden>
-					<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-				</div>
+			<% if current_user %>
+				<% if current_user.id != @pro_user.user.id %>
+					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
+						<div class="reservation-form" hidden>
+							<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+						</div>
+				<% end %>
+			<% else %>
+					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
+					<div class="reservation-form" hidden>
+						<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+					</div>
+				
+			<% end %>
 			</div>
 		</div>
 		<div class="col-sm-5">
@@ -23,18 +31,15 @@
 				<div class="col-sm-6">
 					<p class="pro-name"><%= @pro_user.user.name %> </p>
 				</div>
-			<% if current_user %>
-				<% if current_user.id === @pro_user.user_id %>
-					<div class="col-sm-6 pull-right edit-link">
-						<p class="edit-link"><%= link_to "Edit profile", edit_user_professional_path(current_user.id, current_user.professional.id) %> </p><!-- change to corrent path -->
-					</div>
-				<% end %>
+			<% if current_user && current_user.id === @pro_user.user_id %>
+				<div class="col-sm-6 pull-right edit-link">
+					<p class="edit-link"><%= link_to "Edit profile", edit_user_professional_path(current_user.id, current_user.professional.id) %> </p><!-- change to corrent path -->
+				</div>
 			<% end %>
 			</div>	
 				<p class="pro-title"><%= @pro_user.title %></p>
 				<p class="pro-description"><%= @pro_user.description %></p>
-			<% if current_user %>
-				<% if current_user.id === @pro_user.user_id %>
+			<% if current_user && current_user.id === @pro_user.user_id %>
 					<a id="show-reservations"> View my reservations </a>
 					<div class="my-reservations" hidden>
 						<%if current_user.professional.reservations.empty? %>
@@ -42,7 +47,7 @@
 						<% else %>
 							<% current_user.professional.reservations.each do |reservation| %>
 								<%= reservation.date.strftime("%d/%m/%y") %> with 
-						<%= link_to reservation.user.name, user_path(reservation.user_id) %> 
+						<%= reservation.user.name%> 
 						| <a class="view-reservation">View more details</a>
 							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
 							<% end %>
@@ -50,7 +55,6 @@
 					</div>
 					<br>
 					<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
 			<% end %>
 		</div>
 		
