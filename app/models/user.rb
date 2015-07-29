@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
   	:styles => { 
 	  	:medium => "300x300>",
 	  	:thumb => "100x100>", 
-	  	:small => "150x150#"  
+	  	:small => "200x200#"  
   	}
-  	
+
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
 
 end
