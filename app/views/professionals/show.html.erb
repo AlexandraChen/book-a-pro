@@ -47,9 +47,10 @@
 						<% else %>
 							<% current_user.professional.reservations.each do |reservation| %>
 								<%= reservation.date.strftime("%d/%m/%y") %> with 
-						<%= reservation.user.name%> 
+						<%= reservation.user.name%>
 						| <a class="view-reservation">View more details</a>
 							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
+							<br>
 							<% end %>
 						<% end %>		
 					</div>

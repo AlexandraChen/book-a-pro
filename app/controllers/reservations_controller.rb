@@ -2,15 +2,14 @@ class ReservationsController < ApplicationController
 	before_action :authenticate_user!, only: [:create, :edit, :destroy]
 
 	def create
-		@reservation = Reservation.new(reservation_params)
-		pro = params[:professional_id]
-		@reservation.user_id = current_user.id
-		pro = @reservation.professional_id
+		@reservation = current_user.reservations.new(reservation_params)
 		if @reservation.valid?
 			@reservation.save
+			ReservationMailer.user_reservation_email(@reservation.user).deliver_now
+			ReservationMailer.pro_reservation_email(@reservation.professional.user).deliver_now
 			redirect_to root_path, notice: 'Reservation succesfully posted!'
 		else
-			redirect_to professional_path(pro), notice: 'Something went wrong :( Please try again'
+			redirect_to professional_path(@reservation.professional_id), notice: 'Something went wrong :( Please try again'
 		end
 	end
 
