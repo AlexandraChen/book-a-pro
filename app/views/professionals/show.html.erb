@@ -12,10 +12,12 @@
 			<div class="pro-booking">
 				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
 				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
-				<button type="button" class="btn btn-primary btn-md" id="reservation">Make a Reservation</button>
-				<div class="reservation-form" hidden>
-					<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-				</div>
+				<% if current_user.id != @pro_user.user_id %>
+					<button type="button" class="btn btn-primary btn-md" id="reservation">Make a Reservation</button>
+					<div class="reservation-form" hidden>
+						<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+					</div>
+				<% end %>
 			</div>
 		</div>
 		<div class="col-sm-5">
@@ -35,6 +37,17 @@
 				<p class="pro-description"><%= @pro_user.description %></p>
 			<% if current_user %>
 				<% if current_user.id === @pro_user.user_id %>
+					<a id="show-reservations"> View my reservations </a>
+					<div class="my-reservations" hidden>
+						<%if @pro_user.reservations %>
+							<% @pro_user.reservations.each do |reservation| %>
+								<%= reservation.date %>
+								<% end %>
+						<% else %>
+								<p> No reservations made yet! </p>
+						<% end %>		
+					</div>
+					<br>
 					<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
 				<% end %>
 			<% end %>
