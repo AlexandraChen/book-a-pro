@@ -12,12 +12,14 @@
 			<div class="pro-booking">
 				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
 				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
-				<% if current_user.id != @pro_user.user_id %>
-					<button type="button" class="btn btn-primary btn-md" id="reservation">Make a Reservation</button>
-					<div class="reservation-form" hidden>
-						<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-					</div>
-				<% end %>
+
+				
+					
+			<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
+			<div class="reservation-form" hidden>
+				<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+			</div>
+
 			</div>
 		</div>
 		<div class="col-sm-5">
@@ -39,12 +41,17 @@
 				<% if current_user.id === @pro_user.user_id %>
 					<a id="show-reservations"> View my reservations </a>
 					<div class="my-reservations" hidden>
-						<%if @pro_user.reservations %>
-							<% @pro_user.reservations.each do |reservation| %>
-								<%= reservation.date %>
-								<% end %>
+						<%if current_user.professional.reservations.empty? %>
+							<p> No reservations made yet! </p>
 						<% else %>
-								<p> No reservations made yet! </p>
+							<% current_user.professional.reservations.each do |reservation| %>
+								<%= reservation.date.strftime("%d/%m/%y") %> with 
+						<%= link_to reservation.user.name, user_path(reservation.user_id) %> 
+						| <a class="view-reservation">View more details</a>
+						<div class="reservation" hidden>
+							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
+						</div>
+							<% end %>
 						<% end %>		
 					</div>
 					<br>
