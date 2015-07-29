@@ -46,9 +46,8 @@
 							<p> No reservations made yet! </p>
 						<% else %>
 							<% current_user.professional.reservations.each do |reservation| %>
-								<%= reservation.date.strftime("%d/%m/%y") %> with 
-						<%= reservation.user.name%>
-						| <a class="view-reservation">View more details</a>
+								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
+								| <a class="view-reservation">View more details</a>
 							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
 							<br>
 							<% end %>
