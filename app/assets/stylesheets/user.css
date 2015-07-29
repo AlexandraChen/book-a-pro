@@ -3,12 +3,14 @@
 	height: 7.3em;
 	width: auto;
 }
-
+.prof-pic-thumb img{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
 
 .prof-pic-small{
 	border: 0.1em solid #E9E9E9;
 	height: 9.475em;
-	width: 9.475em;
-	vertical-align: middle;
-	text-align: center;
+	width: auto;
 }

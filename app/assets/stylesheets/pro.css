@@ -28,9 +28,13 @@
 
 .prof-pic{
 	border: 0.1em solid #E9E9E9;
-	height: 22em;
-	width: 22em;
-	vertical-align: middle;
+	height: 21.46em;
+	width:21.46em;
 	text-align: center;
 	margin-left: 2.5em;
+}
+.prof-pic img{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
