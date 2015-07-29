@@ -9,8 +9,14 @@
 				<p class="edit-pic-link"><%= link_to "Edit profile picture", professional_edit_profpic_path(@pro_user.id)  %><p>
 				<% end %>
 			<% end %>
-			<p class="price-hr"><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
-			<p class="pro-location"><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
+			<div class="pro-booking">
+				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
+				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
+				<button type="button" class="btn btn-primary btn-md" id="reservation">Make a Reservation</button>
+				<div class="reservation-form" hidden>
+					<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-5">
 			<div class="row">
@@ -36,3 +42,6 @@
 		
 	</div>
 </div>
+
+
+

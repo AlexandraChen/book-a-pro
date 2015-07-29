@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   get 'professionals/:id'                  => 'professionals#show', as: 'professional'
 
+  resources :reservations
+
 end

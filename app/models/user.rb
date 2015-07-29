@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :timeoutable, :confirmable
 
   has_one :professional, dependent: :destroy
-
+  has_many :reservations
   has_attached_file :prof_pic,
   	:styles => { 
 	  	:medium => "300x300>",

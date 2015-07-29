@@ -22,14 +22,14 @@
 	padding-top: 2em;
 }
 
-.price-hr, .pro-location{
+.pro-booking {
 	text-align: center;
 }
 
 .prof-pic{
 	border: 0.1em solid #E9E9E9;
-	height: 21.46em;
-	width:21.46em;
+	height: 22em;
+	width:22em;
 	text-align: center;
 	margin-left: 2.5em;
 }
