@@ -12,14 +12,10 @@
 			<div class="pro-booking">
 				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
 				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
-
-				
-					
 			<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
-			<div class="reservation-form" hidden>
-				<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-			</div>
-
+				<div class="reservation-form" hidden>
+					<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-5">
@@ -48,9 +44,7 @@
 								<%= reservation.date.strftime("%d/%m/%y") %> with 
 						<%= link_to reservation.user.name, user_path(reservation.user_id) %> 
 						| <a class="view-reservation">View more details</a>
-						<div class="reservation" hidden>
 							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
-						</div>
 							<% end %>
 						<% end %>		
 					</div>

@@ -22,9 +22,7 @@
 					<% current_user.reservations.each do |reservation| %>
 						<%= reservation.date.strftime("%d/%m/%y") %> with 
 						<%= link_to reservation.professional.user.name, professional_path(reservation.professional_id) %> | <a class="view-reservation">View more details</a>
-						<div class="reservation" hidden>
-							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
-						</div>
+						<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
 					<% end %>
 				<% end %>		
 			</div>

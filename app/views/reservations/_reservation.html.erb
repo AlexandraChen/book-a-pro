@@ -1,4 +1,6 @@
-<p> Reservation made by <em><%= reservation.user.name %></em></p>
-<p> Date of the reservation <%= reservation.date.strftime("%d/%m/%y") %> </p> 
+<div class="reservation" hidden>
+	<p> Reservation made by <em><%= reservation.user.name %></em></p>
+	<p> Date of the reservation <%= reservation.date.strftime("%d/%m/%y") %> </p> 
 
-<p> Professional: <%= reservation.professional.user.name %></p>
+	<p> Professional: <%= reservation.professional.user.name %></p>
+</div>

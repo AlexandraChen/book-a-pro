@@ -1,15 +1,14 @@
 $(function () {
 	$("#make-reservation").on("click",function(){
-		$(this).hide()
-		$(".reservation-form").show()
+		$(".reservation-form").toggle()
 	})
 
 	$("#show-reservations").on("click", function(){
-		$(".my-reservations").show()
+		$(".my-reservations").toggle()
 	})
 
-	$(".view-reservation").on("click", function(){
-		$(".reservation").show()
+	$(".view-reservation").on("click", function(event){
+		$(event.currentTarget).next().toggle()
 	})
 
 })
