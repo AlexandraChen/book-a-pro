@@ -14,9 +14,22 @@
 		</div>
 
 		<div class="col-sm-5 users">
-			<p>Hi, <%= @user.name %></p>
+			<a id="show-reservations"> View my reservations </a>
+			<div class="my-reservations" hidden>
+				<%if current_user.reservations %>
+					<% current_user.reservations.each do |reservation| %>
+						<%= reservation.date %>
+						<% end %>
+				<% else %>
+						<p> No reservations made yet! </p>
+				<% end %>		
+			</div>
+			<br>
+			<br>
 			<p>E-mail: <%= @user.email %></p>
 			<p>Password: ******* <%= link_to "Change your password", user_edit_password_path(current_user.id) %></p>
+			<br>
+			<br>
 			<% if current_user.professional %>
 				<%= link_to "View my professional profile", user_professional_path(current_user.id,@user.professional.id) %>
 			<% else %>

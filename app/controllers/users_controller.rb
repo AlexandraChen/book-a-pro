@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       sign_in @user, bypass: true
       redirect_to root_path
     else
-      render "edit"
+      render :edit_password
     end
   end
 
