@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-sm-offset-3">
   <h2>Create Professional Profile</h2>
-      <%= form_for @pro_user, url: user_professionals_path(current_user.id) do |f| %>
+      <%= form_for @pro_user do |f| %>
         <%= f.label "Profile picture" %>
         <%= f.file_field :prof_pic %>
         <%= f.label "Title" %>

@@ -28,7 +28,7 @@
 				</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
 				<div class="col-sm-6 pull-right edit-link">
-					<p class="edit-link"><%= link_to "Edit profile", edit_user_professional_path(current_user.id, current_user.professional.id) %> </p><!-- change to corrent path -->
+					<p class="edit-link"><%= link_to "Edit profile", edit_professional_path(current_user.professional.id) %> </p><!-- change to corrent path -->
 				</div>
 			<% end %>
 			</div>	
@@ -48,7 +48,7 @@
 						<% end %>		
 					</div>
 					<br>
-					<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
+					<%= link_to "Delete professional profile", professional_path(@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
 			<br>
 			<% if current_user %>

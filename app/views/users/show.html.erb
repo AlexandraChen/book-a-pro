@@ -36,7 +36,7 @@
 			<% if current_user.professional %>
 				<%= link_to "View my professional profile", professional_path(@user.professional.id) %>
 			<% else %>
-				<%= link_to 'Create a professional profile', new_user_professional_path(current_user.id), class:"btn btn-primary btn-md" %>
+				<%= link_to 'Create a professional profile', new_professional_path, class:"btn btn-primary btn-md" %>
 			<%end %>
 		</div>
 		

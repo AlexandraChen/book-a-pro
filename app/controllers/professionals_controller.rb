@@ -40,7 +40,7 @@ class ProfessionalsController < ApplicationController
 		@pro_user = current_user.professional	
 		@pro_user.destroy
 		redirect_to user_path,
-				notice: "Professional profile successfuly deleted"
+			notice: "Professional profile successfuly deleted"
 	end
 
 	def edit_profpic
@@ -50,9 +50,8 @@ class ProfessionalsController < ApplicationController
 	def update_profpic
 		@pro_user = current_user.professional
     @pro_user.update_attributes(pro_params)
-    if @pro_user.valid?
-      @pro_user.save
-      redirect_to user_professional_path(current_user.id, @pro_user.id), notice: "Profile picture succesfully"
+    if @pro_user.save
+      redirect_to professional_path(@pro_user.id), notice: "Profile picture succesfully"
       return
     end
     render :edit_profpic
