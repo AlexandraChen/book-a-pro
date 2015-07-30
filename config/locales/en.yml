@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+  pic_update_success: "Profile picture succesfully saved."
+  pic_update: "Edit profile picture"
+  pic_update_fail: "Make sure you choose a picture."
+  review_success: "Review sucessfully posted."
+  password_fail: "Password doesn't match. Try again."
+  pro_new_success: "Professional profile successfully created."
+  pro_new_fail: "Something went wrong. Please, make sure you fill all the fields."
+  pro_update_success: "Profile succesfully updated."
+  pro_delete: "Professional profile successfully deleted."
+  reservation_success: "Reservation successfully made. Check your reservations."	

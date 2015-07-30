@@ -32,7 +32,7 @@
 			<p>E-mail: <%= @user.email %></p>
 			<p>Password: ******* <%= link_to "Change your password", edit_password_users_path %></p>
 			<br>
-			<br>o
+			<br>
 			<% if current_user.professional %>
 				<%= link_to "View my professional profile", professional_path(@user.professional.id) %>
 			<% else %>

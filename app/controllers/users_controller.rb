@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def edit_password
   	@user = current_user
   end
+
   def update_password
     @user = current_user
     if @user.update_with_password(user_params)
@@ -16,25 +17,11 @@ class UsersController < ApplicationController
       sign_in @user, bypass: true
       redirect_to root_path
     else
+      flash[:notice] = t(:password_fail)
       render :edit_password
     end
   end
 
-  # def edit
-  #   @user = User.find(params[:id])
-  # end
-
-  # def update
-  #   @user = User.find(params[:id])
-  #   @user.assign_attributes(user_params)
-  #   if @user.valid?
-  #     @user.save
-  #     render status: 200, json: @user
-  #     # redirect_to user_path(@user)
-  #     return
-  #   end
-  #   render :edit
-  # end
   def edit_profpic
     @user = current_user
   end
@@ -44,9 +31,10 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.valid?
       @user.save
-      redirect_to user_path, notice: "Profile picture succesfully saved"
+      redirect_to user_path, notice: t(:pic_update_success)
       return
     end
+    flash[:notice] = t(:pic_update_fail)
     render :edit_profpic
   end
 

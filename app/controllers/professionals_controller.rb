@@ -1,4 +1,5 @@
 
+
 class ProfessionalsController < ApplicationController
 	
 	def show
@@ -14,10 +15,10 @@ class ProfessionalsController < ApplicationController
 	def create
 		@pro_user = current_user.build_professional(pro_params)
 		if @pro_user.save
-			redirect_to professional_path(@pro_user.id),
-					notice: 'Professional profile succesfully created!'
+			redirect_to professional_path(@pro_user.id), notice: t(:pro_new_success)
 		else
-			render :new, notice: 'Something went wrong :( Please try again'
+			flash[:notice] = t(:pro_new_fail)
+			render :new
 		end
 	end
 
@@ -30,9 +31,10 @@ class ProfessionalsController < ApplicationController
     @pro_user.update_attributes(pro_params)
     if @pro_user.valid?
       @pro_user.save
-      redirect_to professional_path(@pro_user.id), notice: "Profile succesfully updated"
+      redirect_to professional_path(@pro_user.id), notice: t(:pro_update_success)
       return
     end
+    flash[:notice] = t(:pro_new_fail)
     render :edit
   end
 
@@ -40,7 +42,7 @@ class ProfessionalsController < ApplicationController
 		@pro_user = current_user.professional	
 		@pro_user.destroy
 		redirect_to user_path,
-			notice: "Professional profile successfuly deleted"
+			notice: t(:pro_delete)
 	end
 
 	def edit_profpic
@@ -51,9 +53,10 @@ class ProfessionalsController < ApplicationController
 		@pro_user = current_user.professional
     @pro_user.update_attributes(pro_params)
     if @pro_user.save
-      redirect_to professional_path(@pro_user.id), notice: "Profile picture succesfully"
+      redirect_to professional_path(@pro_user.id), notice: t(:pic_update_success)
       return
     end
+    flash[:notice] = t(:pic_update_fail)
     render :edit_profpic
 	end
 
