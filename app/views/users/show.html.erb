@@ -30,11 +30,11 @@
 			<br>
 			<br>
 			<p>E-mail: <%= @user.email %></p>
-			<p>Password: ******* <%= link_to "Change your password", user_edit_password_path(current_user.id) %></p>
+			<p>Password: ******* <%= link_to "Change your password", edit_password_users_path %></p>
 			<br>
-			<br>
+			<br>o
 			<% if current_user.professional %>
-				<%= link_to "View my professional profile", user_professional_path(current_user.id,@user.professional.id) %>
+				<%= link_to "View my professional profile", professional_path(@user.professional.id) %>
 			<% else %>
 				<%= link_to 'Create a professional profile', new_user_professional_path(current_user.id), class:"btn btn-primary btn-md" %>
 			<%end %>

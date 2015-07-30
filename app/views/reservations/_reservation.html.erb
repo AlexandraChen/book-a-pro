@@ -4,6 +4,6 @@
 	<p> Email: <%= reservation.user.email %>
 	
 
-	<p> Professional: <%= link_to reservation.professional.user.name, professional_path(reservation.professional.user.id) %></p>
+	<p> Professional: <%= link_to reservation.professional.user.name, professional_path(reservation.professional.id) %></p>
 	<p> Email: <%= reservation.professional.user.email %>
 </div>

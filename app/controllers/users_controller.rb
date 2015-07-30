@@ -3,14 +3,14 @@ class UsersController < ApplicationController
   before_action :is_same_user?, only: [:edit]
  
   def show
-  	@user = User.find(params[:id])
+  	@user = current_user
   end
 
   def edit_password
-  	@user = User.find(current_user.id)
+  	@user = current_user
   end
   def update_password
-    @user = User.find(current_user.id)
+    @user = current_user
     if @user.update_with_password(user_params)
       # Sign in the user by passing validation in case their password changed
       sign_in @user, bypass: true
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.valid?
       @user.save
-      redirect_to user_path(@user.id), notice: "Profile picture succesfully saved"
+      redirect_to user_path, notice: "Profile picture succesfully saved"
       return
     end
     render :edit_profpic

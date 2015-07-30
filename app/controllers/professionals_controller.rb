@@ -13,10 +13,8 @@ class ProfessionalsController < ApplicationController
 
 	def create
 		@pro_user = current_user.build_professional(pro_params)
-
-		if @pro_user.valid?
-			@pro_user.save
-			redirect_to user_professional_path(current_user.id, @pro_user.id),
+		if @pro_user.save
+			redirect_to professional_path(@pro_user.id),
 					notice: 'Professional profile succesfully created!'
 		else
 			render :new, notice: 'Something went wrong :( Please try again'
@@ -32,7 +30,7 @@ class ProfessionalsController < ApplicationController
     @pro_user.update_attributes(pro_params)
     if @pro_user.valid?
       @pro_user.save
-      redirect_to user_professional_path(current_user.id, @pro_user.id), notice: "Profile succesfully updated"
+      redirect_to professional_path(@pro_user.id), notice: "Profile succesfully updated"
       return
     end
     render :edit
@@ -41,7 +39,7 @@ class ProfessionalsController < ApplicationController
 	def destroy
 		@pro_user = current_user.professional	
 		@pro_user.destroy
-		redirect_to user_path(current_user.id),
+		redirect_to user_path,
 				notice: "Professional profile successfuly deleted"
 	end
 

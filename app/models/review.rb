@@ -7,15 +7,12 @@ class Review < ActiveRecord::Base
 	validates :description, presence: true
 	validates :rating, presence: true
 
-	def self.has_worked_with?(pro,user)
-		@user = user
-		@pro_user = pro
-		reservations = Reservation.where(professional: @pro_user, user: @user).all
-		reservations.where("date <= ?", DateTime.now)
+	validate :has_worked_with
+
+	def has_worked_with
+		reservations = Reservation.where(professional: professional, user: user).where("date <= ?", DateTime.now)
 		if reservations.empty?
-			false
-		else
-			true
+			errors.add(:base, "You need to make a reservation in order to write a review")
 		end
 	end
 
