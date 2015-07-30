@@ -4,6 +4,7 @@ class ProfessionalsController < ApplicationController
 	def show
 		@pro_user = Professional.find(params[:id])
 		@reservation = @pro_user.reservations.new	
+		@review = Review.new
 	end
 
 	def new

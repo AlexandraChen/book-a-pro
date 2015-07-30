@@ -22,9 +22,8 @@ Rails.application.routes.draw do
   patch '/professional/:id/edit_profpic'   => 'professionals#update_profpic'
   get '/users/:id/edit_profpic'            => 'users#edit_profpic', as:'user/edit_profpic'
   patch '/users/:id/edit_profpic'          => 'users#update_profpic'
-
   get 'professionals/:id'                  => 'professionals#show', as: 'professional'
 
   resources :reservations
-
+  resources :reviews, only: [:new, :create]
 end

@@ -15,4 +15,7 @@ $(function () {
 		$(this).val("")
 	})
 
+	$("button.review").on("click", function(event){
+		$(event.currentTarget).next().toggle()
+	})
 })

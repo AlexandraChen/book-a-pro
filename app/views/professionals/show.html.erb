@@ -13,16 +13,11 @@
 			<% if current_user %>
 				<% if current_user.id != @pro_user.user.id %>
 					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
-						<div class="reservation-form" hidden>
 							<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-						</div>
 				<% end %>
 			<% else %>
 					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
-					<div class="reservation-form" hidden>
 						<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
-					</div>
-				
 			<% end %>
 			</div>
 		</div>
@@ -48,13 +43,29 @@
 							<% current_user.professional.reservations.each do |reservation| %>
 								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
 								| <a class="view-reservation">View more details</a>
-							<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
-							<br>
+							<%= render partial: "reservations/reservation", locals: {reservation: reservation}%>
 							<% end %>
 						<% end %>		
 					</div>
 					<br>
 					<%= link_to "Delete professional profile", user_professional_path(current_user.id,@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+			<br>
+			<% if current_user %>
+				<% if current_user.id != @pro_user.user.id %>
+					<button type="submit" class="btn btn-primary btn-md review">Write a review</button>
+					<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
+				<% end %>
+			<% else %>
+				<button type="submit" class="btn btn-primary btn-md review">Write a review</button>
+				<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
+			<% end %>
+			<% if @pro_user.reviews.empty? %>
+				<p> No reviews yet </p>
+			<% else %>
+				<% @pro_user.reviews.each do |review, index| %>
+					<%= render partial: "reviews/reviews", locals: { review: review } %>
+				<% end %>
 			<% end %>
 		</div>
 		
