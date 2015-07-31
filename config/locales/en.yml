@@ -20,7 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+#SITES
+  sign_up: "Sign up"
+  log_in: "Log in"
+  log_out: "Log out"
+  home: "Home"
+  hello: "Hello"
+#EMAIL
+  email_confirmation: "You can confirm your account email through the link below"
+  confirm_account: "Confirm my account"
+  password_reset: "You requested a link to change your password. You can do this through the link below."
+  password_ignore: "If you didn't request this, please ignore athis email."
+  password_notice: "Your password won't change until you access the link above and create a new one."
+  account_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+  account_unlock_notice: "Click the link below to unlock your account:"
+  account_unlock: "Unlock my account"
+#USERS AND PROS
   pic_update_success: "Profile picture succesfully saved."
   pic_update: "Edit profile picture"
   pic_update_fail: "Make sure you choose a picture."
@@ -30,4 +45,15 @@ en:
   pro_new_fail: "Something went wrong. Please, make sure you fill all the fields."
   pro_update_success: "Profile succesfully updated."
   pro_delete: "Professional profile successfully deleted."
-  reservation_success: "Reservation successfully made. Check your reservations."	
+  pro_edit: "Edit professional profile"
+  title: "Title"
+  description: "Description"
+  description_input: "Describe yourself and the services you offer"
+  price_hr: "Price per hour"
+  location: "Location"
+  location_input: "Your working locations"
+  update_profile: "Update profile"
+#RESERVATIONS AND REVIEWS  
+  reservation_success: "Reservation successfully made. Check your reservations."
+  reservation_fail: "Date of reservation must be in the future."
+  welcome: "Welcome"

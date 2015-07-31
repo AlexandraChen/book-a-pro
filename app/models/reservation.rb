@@ -8,7 +8,7 @@ class Reservation < ActiveRecord::Base
 
 	def future_date
 		if date < DateTime.now
-			errors.add(:date, "Must be a future date!")
+			errors.add(:date, t(:reservation_fail))
 		end
 	end
 end
