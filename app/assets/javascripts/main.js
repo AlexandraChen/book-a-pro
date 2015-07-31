@@ -18,4 +18,13 @@ $(function () {
 	$("button.review").on("click", function(event){
 		$(event.currentTarget).next().toggle()
 	})
+
+	$(".prof-pic-medium").mouseenter(function(e){
+		console.log("mousein");
+		$(e.currentTarget.children[1].children[0]).fadeOut()
+	})
+		$(".prof-pic-medium").mouseleave(function(e){
+		console.log("mouseout");
+		$(e.currentTarget.children[1].children[0]).fadeIn()
+	})
 })

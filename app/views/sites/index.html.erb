@@ -17,7 +17,7 @@
 							<h3><%= pro.user.name %></h3>
 							<h4><%= link_to pro.title, professional_path(pro.id)%></h4>
 						</div>
-						<%= image_tag pro.prof_pic.url(:medium)%>
+						<a href="#"><%= image_tag pro.prof_pic.url(:medium)%></a>
 					</div>
 					<br>
 				</div>
@@ -25,4 +25,3 @@
 		</div>
 	</div>
 </div>
-
