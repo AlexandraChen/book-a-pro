@@ -1,14 +1,13 @@
-<div class="container">
+<%= render partial: 'sites/main_panel' %>
+
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
-
-      	<%= text_field_tag :search, params[:search], class:"form-control col-sm-12", placeholder:"Search" %>
+      	<%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Search" %>
       <!-- <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
-
   		<% end %>
 		</div>
-	</div>
+
 	<br>
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 all-pros">
@@ -29,6 +28,7 @@
 				   	</div>
 				   	<p class="pull-left"> <%= link_to pro.title, professional_path(pro.id)%></p>
 				</div>
+			</div>
 			<% end %>
 		</div>
 	</div>

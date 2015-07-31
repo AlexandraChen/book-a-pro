@@ -9,7 +9,7 @@
 				<% end %>
 			</div>	
 			<% if current_user.id === @user.id%>
-				<p class="edit-pic-link"><%= link_to "Edit profile picture", user_edit_profpic_path(current_user.id) %><p>
+				<p class="edit-pic-link"><%= link_to t("pic_update"), user_edit_profpic_path(current_user.id) %><p>
 			<% end %>
 		</div>
 

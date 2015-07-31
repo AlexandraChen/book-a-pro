@@ -26,6 +26,8 @@ en:
   log_out: "Log out"
   home: "Home"
   hello: "Hello"
+  profile: "My profile"
+  why: "Why"
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my account"

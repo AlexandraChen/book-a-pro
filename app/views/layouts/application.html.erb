@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
+  <title>Book-a-Pro</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- have to fix twitter bootstrap gem glyphicon -->
-  <link rel="shortcut icon" class="glyphicon glyphicon-star-empty">
+  <link rel="shortcut icon" href="/assets/sites/icon_header.jpg">
 </head>
 <body>
-  <% if notice %>
-    <div class="notice-alert">
-      <p class="notice"><%= notice %></p>
+  <header>
+    <%= render partial: 'layouts/navbar' %>
+    <% if notice %>
+      <div class="notice-alert">
+        <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <div class="notice-alert">
+        <p class="alert"><%= alert %></p>
+    <% end %>
     </div>
-  <% elsif alert %>
-    <div class="notice-alert">
-      <p class="alert"><%= alert %></p>
-    </div>
-  <% end %>
-<header>
-  <h1> Book-a-Pro </h1>
-  <div class="container">
-    <div class="row">
-      <% if current_user %>
-        <div class="pull-left">
-          <p>Hi, <%= link_to current_user.name, user_path%>!</p>
-         </div>
-         <div class="pull-right">
-          <p><%= link_to t("log_out"), '/logout' %></p>
-        </div>
-      <% else %>
-        <div class="pull-right">
-          <p><%= link_to t("sign_up"), new_user_registration_path %>
-          |
-          <%= link_to t("log_in"), new_user_session_path %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</header>
-<hr>
-<div class="container">
-    <div class="row">
-      <%= yield %>
-  </div>
-</div>
-<hr>
-
+  </header>
+  <%= yield %>
 <footer>
-    <%= link_to t('home'), root_path, id: 'footer' %>
+    <%= render partial: 'layouts/footer' %>
 </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
