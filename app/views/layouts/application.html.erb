@@ -18,15 +18,16 @@
   <% end %>
 
     <% if notice %>
-        <p class="col-sm-4 col-sm-offset-4 notice-alert"><%= notice %></p>
+      <div class="col-sm-4 col-sm-offset-4notice-alert">
+        <p><%= notice %></p>
+      </div>
     <% elsif alert %>
-        <p class="col-sm-4 col-sm-offset-4 notice-alert"><%= alert %></p>
+      <div class="col-sm-4 col-sm-offset-4 notice-alert">   
+        <p><%= alert %></p>
+      </div>
     <% end %>
 
-    <div class="sign-up" hidden>
-
-    </div>
-  <%= yield %>
+    <%= yield %>
   
   <%= render partial: 'layouts/footer' %>
   
