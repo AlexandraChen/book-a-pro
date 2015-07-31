@@ -1,6 +1,3 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .prof-pic-thumb{
 	border: 0.1em solid #E9E9E9;
 	height: 7.3em;
@@ -17,3 +14,37 @@
 	height: 12em;
 	width: 12em;
 }
+
+.all-pros{
+	margin-top: 15em;
+}
+
+.prof-pic-medium{
+	margin: auto;
+	background: #F9F9F9;
+	position: relative;
+	height: 25em;
+	width:  25em;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.prof-pic-medium img{
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.prof-pic-title{
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 25%;
+	right: 25%;
+	transform: translateY(-50%);
+	h3, h4{
+		margin: 0;
+	}
+}
+

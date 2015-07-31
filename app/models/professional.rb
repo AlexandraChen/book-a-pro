@@ -10,7 +10,7 @@ class Professional < ActiveRecord::Base
 
 	has_attached_file :prof_pic,
   		:styles => { 
-		  	:medium => "300x300>",
+		  	:medium => "336x336>",
 		  	:thumb => "100x100>", 
 		  	:small => "200x200#"  
   		}

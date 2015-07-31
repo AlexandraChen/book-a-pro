@@ -1,42 +1,91 @@
-// Place all the styles related to the Sites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-header, footer, .all-pros{
+header, footer, .all-pros, #panel-title, #panel-slogan, #footer{
 	text-align: center;
 }
 
 .notice-alert{
-	height: 4em;
-	width: 100%;
 	text-align: center;
-	color: white;
-	background-color: black;
+	color: #9E2A99;
+	position: absolute;
+	z-index: 9;
+	background-color: #D5F301;
+	width: 30em;
+	height: 2em;
+	border-radius: 0.1em;
+	vertical-align: middle;
+}
+
+#search, .main-panel{
+	width: 100%;
+}
+
+#search{
+	opacity: 0.9;
 }
 
 #navbar{
 	border-radius: 0px;
 	margin: 0;
+	background-color: transparent;
+	font-weight: bold;
+	border: none;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#navbar>li>a, #navbar>a{
+	color:#D5F301
+}
+#navbar>li>a:hover, #navbar>a:hover{
+	color: #9E2A99;
 }
 
 #footer{
+	width:100%;
 	height: 5em;
 	border-radius: 0px;
-	text-align: center;
 	margin: 1em 0 0 0;
+	position: absolute;
 }
 
 .main-panel{
-	width:100%;
 	height: 35em;
-	margin: 0;
-	background: url("/assets/sites/boxing.jpg")
+	background: url("/assets/sites/boxing.jpg");
+	margin-top: -4em;
 }
 
 #search-form{
 	margin-top: -7em;
 }
 
-#search{
-	width: 100%;
+.main-panel{
+	color: white;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	#panel-title, #panel-slogan{
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+	}
+	#panel-title{
+		font: {
+			size: 3.5em;
+			weight: bold;
+		}
+	}
+	#panel-slogan{
+		margin: -1.5em;
+		font-size: 1.5em;
+	}
 }
+
+.container#spacer{
+		height: 40em;
+		margin-top: 3em;
+}
+
+.nav-dif{
+	background-color: #222;
+	width: 100%;
+	height: 4em;
+}
+
+
+

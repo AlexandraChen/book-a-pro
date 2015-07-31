@@ -1,34 +1,26 @@
 <%= render partial: 'sites/main_panel' %>
+<div class="row">	
+	<div class="col-sm-4 col-sm-offset-4">
+		<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
+    	<%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Search" %>
+    <!-- <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
+		<% end %>
+	</div>
+</div>
 
-	<div class="row">
-		<div class="col-sm-4 col-sm-offset-4">
-			<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
-      	<%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Search" %>
-      <!-- <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
-  		<% end %>
-		</div>
-
-	<br>
-	<div class="row">
-		<div class="col-sm-4 col-sm-offset-4 all-pros">
+	<div class="container all-pros">
+		<div class="row">
 			<% @pro_users.each do |pro| %>
-				<div class="media">
-				  <div class="media-left media-left">
-				    <a href="#">
-				    	<div class="prof-pic-thumb">
-				     	 <%= image_tag pro.prof_pic.url(:thumb)%>
-				     	</div>
-				    </a>
-				  </div>
-				  <div class="media-body">
-				  	<div class="row">
-							<div class="col-sm-12">
-				   			<h4 class="media-heading pull-left"> <%= pro.user.name %></h4>
-				   		</div>
-				   	</div>
-				   	<p class="pull-left"> <%= link_to pro.title, professional_path(pro.id)%></p>
+				<div class="col-sm-4">
+					<div class="prof-pic-medium">
+						<div class="prof-pic-title">
+							<h3><%= pro.user.name %></h3>
+							<h4><%= link_to pro.title, professional_path(pro.id)%></h4>
+						</div>
+						<%= image_tag pro.prof_pic.url(:medium)%>
+					</div>
+					<br>
 				</div>
-			</div>
 			<% end %>
 		</div>
 	</div>

@@ -8,21 +8,28 @@
   <link rel="shortcut icon" href="/assets/sites/icon_header.jpg">
 </head>
 <body>
-  <header>
+    
+  <% if current_page?("/") %>
     <%= render partial: 'layouts/navbar' %>
-    <% if notice %>
-      <div class="notice-alert">
-        <p class="notice"><%= notice %></p>
-    <% elsif alert %>
-      <div class="notice-alert">
-        <p class="alert"><%= alert %></p>
-    <% end %>
+  <% else %>
+    <div class="nav-dif">
+    <%= render partial: 'layouts/navbar'%>
     </div>
-  </header>
+  <% end %>
+
+    <% if notice %>
+        <p class="col-sm-4 col-sm-offset-4 notice-alert"><%= notice %></p>
+    <% elsif alert %>
+        <p class="col-sm-4 col-sm-offset-4 notice-alert"><%= alert %></p>
+    <% end %>
+
+    <div class="sign-up" hidden>
+
+    </div>
   <%= yield %>
-<footer>
-    <%= render partial: 'layouts/footer' %>
-</footer>
+  
+  <%= render partial: 'layouts/footer' %>
+  
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
