@@ -1,16 +1,14 @@
-// Place all the styles related to the Professionals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .pro-name{
-	font-size: 2em;
+	font-size: 1.7em;
 	font-weight: bold;
 	padding-bottom: 0;
+	color: black;
 }
 
-.pro-title{
-	font-size: 1.5em;
-	font-style: italic;
+.pro-title a{
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #B10DC9;
 }
 
 .pro-description{
@@ -38,7 +36,38 @@
 	margin-left: 2.5em;
 }
 .prof-pic img{
+
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+
+.prof-pic-medium{
+	margin: auto;
+	background: #F9F9F9;
+	position: relative;
+	height: 25em;
+	width:  25em;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.prof-pic-medium img{
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.prof-pic-title{
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 25%;
+	right: 25%;
+	transform: translateY(-50%);
+	h3, h4{
+		margin: 0;
+	}
 }

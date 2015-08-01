@@ -20,11 +20,24 @@ $(function () {
 	})
 
 	$(".prof-pic-medium").mouseenter(function(e){
-		console.log("mousein");
 		$(e.currentTarget.children[1].children[0]).fadeOut()
 	})
 		$(".prof-pic-medium").mouseleave(function(e){
-		console.log("mouseout");
 		$(e.currentTarget.children[1].children[0]).fadeIn()
 	})
+
+	$(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
 })

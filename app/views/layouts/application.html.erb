@@ -9,7 +9,7 @@
 </head>
 <body>
     
-  <% if current_page?("/") %>
+  <% if current_page?("/") %> 
     <%= render partial: 'layouts/navbar' %>
   <% else %>
     <div class="nav-dif">
@@ -26,11 +26,11 @@
         <p><%= alert %></p>
       </div>
     <% end %>
-
+    <a href="#" class="scrollup">Scroll-Up</a>
+    
     <%= yield %>
-  
-  <%= render partial: 'layouts/footer' %>
-  
+
+    <%= render partial: 'layouts/footer' %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>

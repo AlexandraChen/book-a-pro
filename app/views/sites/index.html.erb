@@ -14,14 +14,14 @@
 				<div class="col-sm-4">
 					<div class="prof-pic-medium">
 						<div class="prof-pic-title">
-							<h3><%= pro.user.name %></h3>
-							<h4><%= link_to pro.title, professional_path(pro.id)%></h4>
+							<p class="pro-name"><%= pro.user.name %></p>
+							<p class="pro-title"><%= link_to pro.title, professional_path(pro.id)%></p>
 						</div>
 						<a href="#"><%= image_tag pro.prof_pic.url(:medium)%></a>
 					</div>
-					<br>
 				</div>
 			<% end %>
 		</div>
 	</div>
 </div>
+<%= render partial: 'layouts/why' %>
