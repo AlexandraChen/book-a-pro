@@ -7,21 +7,21 @@
 		<% end %>
 	</div>
 </div>
-
-	<div class="container all-pros">
-		<div class="row">
-			<% @pro_users.each do |pro| %>
-				<div class="col-sm-4">
-					<div class="prof-pic-medium">
-						<div class="prof-pic-title">
-							<p class="pro-name"><%= pro.user.name %></p>
-							<p class="pro-title"><%= link_to pro.title, professional_path(pro.id)%></p>
-						</div>
-						<a href="#"><%= image_tag pro.prof_pic.url(:medium)%></a>
+<div class="container all-pros">
+	<div class="row">
+		<% @pro_users.each do |pro| %>
+			<div class="col-sm-4">
+				<div class="prof-pic-medium">
+					<div class="prof-pic-title">
+						<p class="pro-name"><%= pro.user.name %></p>
+						<p class="pro-title"><%= link_to pro.title, professional_path(pro.id)%></p>
 					</div>
+					<a href="#"><%= image_tag pro.prof_pic.url(:medium)%></a>
 				</div>
-			<% end %>
-		</div>
+				<br>
+			</div>
+		<% end %>
 	</div>
 </div>
+
 <%= render partial: 'layouts/why' %>

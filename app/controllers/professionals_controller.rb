@@ -1,11 +1,18 @@
-
-
 class ProfessionalsController < ApplicationController
 	
 	def show
 		@pro_user = Professional.find(params[:id])
 		@reservation = @pro_user.reservations.new	
 		@review = Review.new
+		@rating = 0
+		unless @pro_user.reviews.empty?
+			@pro_user.reviews.each do |review|
+				@rating+=review.rating
+			end
+			@rating = @rating. / @pro_user.reviews.count
+		end
+		
+
 	end
 
 	def new

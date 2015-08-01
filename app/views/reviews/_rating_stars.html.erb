@@ -1,0 +1,45 @@
+<div class="row pro-rating">
+	<div class="col-sm-12">
+		<% if @pro_user.reviews.empty? %>
+			<i class="glyphicon glyphicon-star-empty"></i>
+			<i class="glyphicon glyphicon-star-empty"></i>
+			<i class="glyphicon glyphicon-star-empty"></i>
+			<i class="glyphicon glyphicon-star-empty"></i>
+			<i class="glyphicon glyphicon-star-empty"></i>
+			<p> Be the first one that writes a review for <%= @pro_user.user.name %> </p>
+		<% else %>
+			<% case @rating %>
+				<% when 1 %>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+				<% when 2 %>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+				<% when 3 %>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+				<% when 4 %>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star-empty"></i>
+				<% when 5 %>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+					<i class="glyphicon glyphicon-star"></i>
+			<% end %>
+		<% end %>
+	</div>
+</div>

@@ -40,4 +40,8 @@ $(function () {
         return false;
     });
 
+  $("button.review-btn").on("click",function(){
+		$(".reviews-form").toggle();
+	})
+
 })

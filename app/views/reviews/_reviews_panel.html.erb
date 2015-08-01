@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<% if current_user %>
+			<% if current_user.id != @pro_user.user.id %>
+			<div class="row">
+				<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
+				</div>
+			<% end %>
+		<% else %>
+			<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
+		<% end %>
+		<% if @pro_user.reviews.empty? %>
+			<p> No reviews yet </p>
+		<% else %>
+			<div class="review-panel">
+				<div class="row">
+					<% @pro_user.reviews.each do |review, index| %>
+						<%= render partial: "reviews/reviews", locals: { review: review } %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
