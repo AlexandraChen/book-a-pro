@@ -14,3 +14,8 @@
 
 # Ignore application configuration
 /config/application.yml
+
+#Ignore seeding prof pics
+/app/assets/images/prof_pics
+
+/public/system
