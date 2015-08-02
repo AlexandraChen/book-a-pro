@@ -5,7 +5,7 @@
 				<%= image_tag @pro_user.prof_pic.url(:medium)%>
 			</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
-				<p class="edit-pic-link"><%= link_to "Edit profile picture", professional_edit_profpic_path(@pro_user.id)  %><p>
+				<p class="edit-pic-link"><%= link_to t("pic_update"), professional_edit_profpic_path(@pro_user.id)  %><p>
 			<% end %>
 			<br>
 			<div class="pro-booking">
@@ -13,11 +13,11 @@
 				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
 			<% if current_user %>
 				<% if current_user.id != @pro_user.user.id %>
-					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
+					<button type="button" class="btn btn-primary btn-md" id="make-reservation"></button>
 							<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
 				<% end %>
 			<% else %>
-					<button type="button" class="btn btn-primary btn-md" id="make-reservation">Make a Reservation</button>
+					<button type="button" class="btn btn-primary btn-md" id="make-reservation"><%= t("make_reservation") %></button>
 						<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
 			<% end %>
 			</div>
@@ -29,7 +29,7 @@
 				</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
 				<div class="col-sm-6 pull-right edit-link">
-					<p class="edit-link"><%= link_to "Edit profile", edit_professional_path(current_user.professional.id) %> </p>
+					<p class="edit-link"><%= link_to t("edit_profile"), edit_professional_path(current_user.professional.id) %> </p>
 				</div>
 			<% end %>
 			</div>	

@@ -16,7 +16,7 @@
             <%= f.submit t("update_profile"), class: "btn btn-default col-sm-12"%>
           <% end %>
         </form>
-        <%= link_to "Delete professional profile", professional_path(@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to "Delete professional profile", professional_path(@pro_user.id), :confirm => t("sure_delete"), :method => :delete %>
     </div>
   </div>
 </div>

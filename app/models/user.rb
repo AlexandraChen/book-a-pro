@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
 	  	:medium => "300x300>",
 	  	:thumb => "100x100>", 
 	  	:small => "200x200#"  
-  	}
+  	},
+    :default_url => "images/no_pic.png"
 
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
 

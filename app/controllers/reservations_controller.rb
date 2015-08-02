@@ -13,8 +13,9 @@ class ReservationsController < ApplicationController
 	end
 	
 	def reservations
-  end
-
+		@user_reservations = current_user.reservations.order("date ASC")
+		@pro_reservations = current_user.professional.reservations.order("date ASC")
+	end
 	private
 	def reservation_params
 		params.require(:reservation).permit(:date, :professional_id)

@@ -7,7 +7,7 @@
 					<%if current_user.reservations.empty?%>
 						<p><%= t("no_user_reservations") %></p>
 					<% else %>
-						<% current_user.reservations.each do |reservation| %>
+						<% @user_reservations.each do |reservation| %>
 							<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.professional.user.name %> 
 							| <a class="view-reservation">View more details</a>
 							<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
@@ -20,7 +20,7 @@
 			<h4><%= t("pro_reservations") %></h4>
 				<div class="my-reservations" >
 					<br>
-					<%if current_user.professional.reservations.empty? %>
+					<%if @pro_reservations.empty? %>
 						<p><%= t("no_pro_reservations") %></p>
 					<% else %>
 						<% current_user.professional.reservations.each do |reservation| %>

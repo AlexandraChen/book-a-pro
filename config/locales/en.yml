@@ -29,6 +29,8 @@ en:
   hello: "Hello"
   profile: "My profile"
   prof_profile: "My Professional profile"
+  edit_profile: "Edit profile"
+  sure_delete: "Are you sure you want to delete your profesional profile?"
   why: "Why"
   why_users: "Find and book the best expert. Take a look at their backgrounds and people's review on them. Make an appointment right away."
   why_pros: "Display your professionals skills to the world. Get more appointments."
@@ -68,6 +70,7 @@ en:
   no_user_reservations: "You haven't book anyone yet!"
   pro_reservations: "Reservations as Professional"
   no_pro_reservations: "No reservations made to you yet!"
+  make_reservation: "Make a reservation"
 
 
 
