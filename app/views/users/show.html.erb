@@ -1,6 +1,7 @@
 <div class="container" id="spacer">
 	<div class="row">
 		<div class="col-sm-3 col-sm-offset-1">
+			<br>
 			<div class="prof-pic-small">
 				<% if @user.prof_pic_file_name === nil%>
 					<p>Prof pic avatar here</p>	
@@ -10,7 +11,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 				<% if current_user.id === @user.id%>
-					<p class="edit-pic-link"><%= link_to t("pic_update"), user_edit_profpic_path(current_user.id) %><p>
+					<p class="edit-pic-link"><%= link_to t("pic_update"), edit_profpic_users_path%><p>
 				<% end %>
 				</div>	
 			</div>	
@@ -20,9 +21,11 @@
 			<br>
 			<br>
 			<div class="col-sm-6 pull-right edit-link">
-					<p class="edit-link"><%= link_to t("edit_profile"), edit_user_registration_path(current_user.id) %> </p>
+					<p class="edit-link"><%= link_to t("edit_profile"), edit_profile_users_path %> </p>
 			</div>
 
+			<h4><%= @user.name.capitalize %> <%= @user.last_name.capitalize %></h4>
+			<br>
 			<p>E-mail: <%= @user.email %></p>
 			<p>Password: ******* <%= link_to "Change your password", edit_password_users_path %></p>
 			<br>

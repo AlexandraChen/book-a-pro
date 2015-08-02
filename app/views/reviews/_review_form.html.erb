@@ -1,10 +1,13 @@
 <div class="row">
 	<div class="col-sm-12 stars-write">
 		<%= render partial: 'reviews/rating_overall' %>
-		<% if current_user.id === pro_user.user.id %>
-			<button type="submit" class="btn btn-default btn-md review-btn" disabled>Write a review</button>
-		<% else %>
-			<button type="submit" class="btn btn-default btn-md review-btn" disable>Write a review</button>
+		<% if current_user %>
+			<% if current_user.id === pro_user.user.id %>
+				<button type="submit" class="btn btn-default btn-md review-btn" disabled>Write a review</button>
+			<% else %>
+				<button type="submit" class="btn btn-default btn-md review-btn">Write a review</button>
+			<% end %>
+			<button type="submit" class="btn btn-default btn-md review-btn">Write a review</button>
 		<% end %>
 	</div>
 </div>

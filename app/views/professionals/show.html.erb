@@ -5,7 +5,7 @@
 				<%= image_tag @pro_user.prof_pic.url(:medium)%>
 			</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
-				<p class="edit-pic-link"><%= link_to t("pic_update"), professional_edit_profpic_path(@pro_user.id)  %><p>
+				<p class="edit-pic-link"><%= link_to t("pic_update"), professional_edit_profpic_path  %><p>
 			<% end %>
 			<br>
 			<div class="pro-booking">

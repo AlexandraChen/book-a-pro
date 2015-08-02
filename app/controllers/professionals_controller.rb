@@ -11,8 +11,6 @@ class ProfessionalsController < ApplicationController
 			end
 			@rating = @rating. / @pro_user.reviews.count
 		end
-		
-
 	end
 
 	def new

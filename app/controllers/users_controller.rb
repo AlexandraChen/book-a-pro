@@ -6,6 +6,20 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
+  def edit_profile
+    @user = current_user
+  end
+
+  def update_profile
+     @user = current_user
+    if @user.update_attributes(user_params)
+      redirect_to user_path, notice: "Profile successfully updated."
+    else
+      flash[:notice] = "something went wrong"
+      render :edit_profile
+    end
+  end
+
   def edit_password
   	@user = current_user
   end
@@ -43,6 +57,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :current_password, :prof_pic)
+    params.require(:user).permit(:name, :last_name, :password, :password_confirmation, :current_password, :prof_pic)
   end
 end

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_one :professional, dependent: :destroy
   has_many :reservations, dependent: :destroy
   has_many :reviews
+  validates :email, presence: true
+  validates :name, presence: true
   has_attached_file :prof_pic,
   	:styles => { 
 	  	:medium => "300x300>",
