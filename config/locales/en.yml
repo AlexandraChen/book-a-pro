@@ -25,9 +25,14 @@ en:
   log_in: "Log in"
   log_out: "Log out"
   home: "Home"
+  welcome: "Welcome"
   hello: "Hello"
   profile: "My profile"
+  prof_profile: "My Professional profile"
   why: "Why"
+  why_users: "Find and book the best expert. Take a look at their backgrounds and people's review on them. Make an appointment right away."
+  why_pros: "Display your professionals skills to the world. Get more appointments."
+  why_vp: "Best professionals on all areas rated by their customers. "
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my account"
@@ -58,4 +63,14 @@ en:
 #RESERVATIONS AND REVIEWS  
   reservation_success: "Reservation successfully made. Check your reservations."
   reservation_fail: "Date of reservation must be in the future."
-  welcome: "Welcome"
+  reservations: "Reservations"
+  user_reservations: "Reservations I've made"
+  no_user_reservations: "You haven't book anyone yet!"
+  pro_reservations: "Reservations as Professional"
+  no_pro_reservations: "No reservations made to you yet!"
+
+
+
+
+
+

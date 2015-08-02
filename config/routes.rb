@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     get '/logout', to: 'devise/sessions#destroy', as: :signout
   end
 
-  get '/users/profile'                  => 'users#show', as: 'user'
+  get '/users/profile'            => 'users#show', as: 'user'
+  get '/reservations'             => 'reservations#reservations'
   
   resources :users, only: [:edit] do
 	  collection do

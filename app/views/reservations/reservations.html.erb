@@ -1,0 +1,35 @@
+<div class="container" id="spacer">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-1">
+			<h4><%= t("user_reservations") %></h4>
+				<div class="my-reservations" >
+					<br>
+					<%if current_user.reservations.empty?%>
+						<p><%= t("no_user_reservations") %></p>
+					<% else %>
+						<% current_user.reservations.each do |reservation| %>
+							<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.professional.user.name %> 
+							| <a class="view-reservation">View more details</a>
+							<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
+							<br>
+						<% end %>
+					<% end %>		
+				</div>	
+			</div>	
+		<div class="col-sm-4 col-sm-offset-1">
+			<h4><%= t("pro_reservations") %></h4>
+				<div class="my-reservations" >
+					<br>
+					<%if current_user.professional.reservations.empty? %>
+						<p><%= t("no_pro_reservations") %></p>
+					<% else %>
+						<% current_user.professional.reservations.each do |reservation| %>
+							<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
+							| <a class="view-reservation">View more details</a>
+						<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
+						<% end %>
+					<% end %>		
+				</div>
+			</div>
+	</div>
+</div>

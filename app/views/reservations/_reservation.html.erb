@@ -1,9 +1,0 @@
-<div class="reservation" hidden>
-	<h5> Date of the reservation <%= reservation.date.strftime("%d/%m/%y") %> </h5> 
-	<p> Reservation made by <em><%= reservation.user.name %></em></p>
-	<p> Email: <%= reservation.user.email %>
-	
-
-	<p> Professional: <%= link_to reservation.professional.user.name, professional_path(reservation.professional.id) %></p>
-	<p> Email: <%= reservation.professional.user.email %>
-</div>

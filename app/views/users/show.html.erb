@@ -14,19 +14,6 @@
 		</div>
 
 		<div class="col-sm-5 users">
-			<a id="show-reservations"> View my reservations </a>
-			<div class="my-reservations" hidden>
-				<%if current_user.reservations.empty?%>
-					<p> No reservations made yet! </p>
-				<% else %>
-					<% current_user.reservations.each do |reservation| %>
-						<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.professional.user.name %> 
-						| <a class="view-reservation">View more details</a>
-						<%= render partial: 'reservations/reservation', locals: {reservation: reservation}%>
-						<br>
-					<% end %>
-				<% end %>		
-			</div>
 			<br>
 			<br>
 			<p>E-mail: <%= @user.email %></p>

@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController	
-	before_action :authenticate_user!, only: [:create]
+	before_action :authenticate_user!, only: [:create, :reservations]
 
 	def create
 		@reservation = current_user.reservations.new(reservation_params)
@@ -12,6 +12,9 @@ class ReservationsController < ApplicationController
 		end
 	end
 	
+	def reservations
+  end
+
 	private
 	def reservation_params
 		params.require(:reservation).permit(:date, :professional_id)

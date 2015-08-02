@@ -5,13 +5,13 @@
 			<div class="row">
 				<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
 				</div>
+			<% else %>
+			<%= render partial: 'reviews/rating_overall' %>
 			<% end %>
 		<% else %>
 			<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
 		<% end %>
-		<% if @pro_user.reviews.empty? %>
-			<p> No reviews yet </p>
-		<% else %>
+		<% unless @pro_user.reviews.empty? %>
 			<div class="review-panel">
 				<div class="row">
 					<% @pro_user.reviews.each do |review, index| %>

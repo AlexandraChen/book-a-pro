@@ -3,7 +3,7 @@
 	<div class="col-sm-4 col-sm-offset-4">
 		<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
     	<%= text_field_tag :search, params[:search], class:"form-control", placeholder:"Search" %>
-    <!-- <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
+<!--     <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
 		<% end %>
 	</div>
 </div>
@@ -13,8 +13,8 @@
 			<div class="col-sm-4">
 				<div class="prof-pic-medium">
 					<div class="prof-pic-title">
-						<p class="pro-name"><%= pro.user.name %></p>
-						<p class="pro-title"><%= link_to pro.title, professional_path(pro.id)%></p>
+						<p class="pro-name"><%= link_to pro.user.name, professional_path(pro.id) %></p>
+						<p class="pro-title"><%= pro.title %></p>
 					</div>
 					<a href="#"><%= image_tag pro.prof_pic.url(:medium)%></a>
 				</div>

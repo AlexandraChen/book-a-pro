@@ -1,17 +1,24 @@
-<div class="col-sm-6 col-sm-offset-3">
-  <h4><%= t("pro_edit") %></h4>
-      <%= form_for(@pro_user, :url => { :action => :update} )do |f| %>
-        <%= f.label t("title") %>
-        <%= f.text_field :title, class: "form-control", placeholder: t("title") %>
-        <%= f.label t("description") %>
-        <%= f.text_area :description, class: "form-control", placeholder: t("description_input")%>
-        <%= f.label t("price_hr") %>
-        <%= f.number_field :price_hr, class: "form-control", placeholder: t("price_hr") %>
-        <%= f.label t("location")%>
-        <%= f.text_field :location, class: "form-control", placeholder: t("location_input") %>
-        <br>
-        <%= f.submit t("update_profile"), class: "btn btn-default col-sm-12"%>
-      <% end %>
-    </form>
+
+<div class="container" id="spacer">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h4><%= t("pro_edit") %></h4>
+          <%= form_for(@pro_user, :url => { :action => :update} )do |f| %>
+            <%= f.label t("title") %>
+            <%= f.text_field :title, class: "form-control", placeholder: t("title") %>
+            <%= f.label t("description") %>
+            <%= f.text_area :description, class: "form-control", placeholder: t("description_input")%>
+            <%= f.label t("price_hr") %>
+            <%= f.number_field :price_hr, class: "form-control", placeholder: t("price_hr") %>
+            <%= f.label t("location")%>
+            <%= f.text_field :location, class: "form-control", placeholder: t("location_input") %>
+            <br>
+            <%= f.submit t("update_profile"), class: "btn btn-default col-sm-12"%>
+          <% end %>
+        </form>
+        <%= link_to "Delete professional profile", professional_path(@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
 </div>
+
 

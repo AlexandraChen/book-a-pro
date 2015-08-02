@@ -38,6 +38,8 @@ class UsersController < ApplicationController
     render :edit_profpic
   end
 
+ 
+
   private
 
   def user_params

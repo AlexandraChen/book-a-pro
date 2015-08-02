@@ -22,7 +22,7 @@
 			<% end %>
 			</div>
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-4">
 			<div class="row">
 				<div class="col-sm-6">
 					<p class="pro-name"><%= @pro_user.user.name %> </p>
@@ -34,25 +34,9 @@
 			<% end %>
 			</div>	
 				<p class="pro-title"><%= @pro_user.title %></p>
-				<%= render partial: 'reviews/rating_stars' %>
+				<%= render partial: 'reviews/rating_overall' %>
 				<br>
 				<p class="pro-description"><%= @pro_user.description %></p>
-			<% if current_user && current_user.id === @pro_user.user_id %>
-					<a id="show-reservations"> View my reservations </a>
-					<div class="my-reservations" hidden>
-						<%if current_user.professional.reservations.empty? %>
-							<p> No reservations made yet! </p>
-						<% else %>
-							<% current_user.professional.reservations.each do |reservation| %>
-								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
-								| <a class="view-reservation">View more details</a>
-							<%= render partial: "reservations/reservation", locals: {reservation: reservation}%>
-							<% end %>
-						<% end %>		
-					</div>
-					<br>
-					<%= link_to "Delete professional profile", professional_path(@pro_user.id), :confirm => 'Are you sure?', :method => :delete %>
-			<% end %>
 			<br>
 		</div>
 		<%= render partial: "reviews/reviews_panel" %>

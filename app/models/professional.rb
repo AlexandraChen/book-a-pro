@@ -1,6 +1,6 @@
 class Professional < ActiveRecord::Base
 	belongs_to :user
-	has_many :reservations
+	has_many :reservations, dependent: :destroy
 	has_many :reviews, dependent: :destroy
 	validates :title, presence: true
 	validates :description, presence: true

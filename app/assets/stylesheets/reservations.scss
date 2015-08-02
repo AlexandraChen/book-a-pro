@@ -2,12 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .reservation{
-	border: 0.1em solid #E8E8E8;
-	border-radius: 0.5em;
-	height: 13em;
-	width: 20em;
+	height: auto;
+	width: 25em;
+	background-color: #E8E8E8;
 }
 
 #search{
 	width: 26em;
+}
+
+.col-sm-2 .fa{
+	font-size: 1.6em;
+}
+
+p.pull-right.id{
+	padding: 0.6em;
+}
+
+.col-sm-2.col-sm-offset-1.fa {
+	text-align: center;
 }
