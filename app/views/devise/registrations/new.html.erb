@@ -12,6 +12,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, autofocus: true, class: "form-control", placeholder: :last_name %>
+      </div>
+
+      <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: :email, type: "email" %>
       </div>

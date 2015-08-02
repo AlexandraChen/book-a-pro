@@ -9,11 +9,11 @@
 			<% end %>
 			<br>
 			<div class="pro-booking">
-				<p><i class="glyphicon glyphicon-usd"></i><%= @pro_user.price_hr%>/hr</p>
-				<p><i class="glyphicon glyphicon-map-marker"></i><%= @pro_user.location %></p>
+				<p><i class="fa fa-usd"></i><%= @pro_user.price_hr%>/hr</p>
+				<p><i class="fa fa-map-marker"></i><%= @pro_user.location %></p>
 			<% if current_user %>
 				<% if current_user.id != @pro_user.user.id %>
-					<button type="button" class="btn btn-primary btn-md" id="make-reservation"></button>
+					<button type="button" class="btn btn-primary btn-md" id="make-reservation"><%= t("make_reservation") %></button>
 							<%= render partial: 'reservations/reservation_form', locals: {reservation: @reservation}%>
 				<% end %>
 			<% else %>

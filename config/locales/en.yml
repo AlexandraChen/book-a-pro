@@ -30,11 +30,12 @@ en:
   profile: "My profile"
   prof_profile: "My Professional profile"
   edit_profile: "Edit profile"
-  sure_delete: "Are you sure you want to delete your profesional profile?"
+  sure_delete: "Are you sure you want to delete your profile?"
   why: "Why"
   why_users: "Find and book the best expert. Take a look at their backgrounds and people's review on them. Make an appointment right away."
   why_pros: "Display your professionals skills to the world. Get more appointments."
   why_vp: "Best professionals on all areas rated by their customers. "
+  account_delete: "Delete my account"
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my account"
@@ -50,6 +51,9 @@ en:
   pic_update_fail: "Make sure you choose a picture."
   review_success: "Review sucessfully posted."
   password_fail: "Password doesn't match. Try again."
+  password_no_change: "(leave blank if you don't want to change it)"
+  password_current: "(we need your current password to confirm your changes)"
+  password_new: "New password"
   pro_new_success: "Professional profile successfully created."
   pro_new_fail: "Something went wrong. Please, make sure you fill all the fields."
   pro_update_success: "Profile succesfully updated."
@@ -62,6 +66,7 @@ en:
   location: "Location"
   location_input: "Your working locations"
   update_profile: "Update profile"
+
 #RESERVATIONS AND REVIEWS  
   reservation_success: "Reservation successfully made. Check your reservations."
   reservation_fail: "Date of reservation must be in the future."

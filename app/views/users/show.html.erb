@@ -19,6 +19,10 @@
 		<div class="col-sm-5 users">
 			<br>
 			<br>
+			<div class="col-sm-6 pull-right edit-link">
+					<p class="edit-link"><%= link_to t("edit_profile"), edit_user_registration_path(current_user.id) %> </p>
+			</div>
+
 			<p>E-mail: <%= @user.email %></p>
 			<p>Password: ******* <%= link_to "Change your password", edit_password_users_path %></p>
 			<br>
