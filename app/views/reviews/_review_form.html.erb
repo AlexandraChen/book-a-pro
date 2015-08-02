@@ -7,6 +7,7 @@
 			<% else %>
 				<button type="submit" class="btn btn-default btn-md review-btn">Write a review</button>
 			<% end %>
+		<% else %>
 			<button type="submit" class="btn btn-default btn-md review-btn">Write a review</button>
 		<% end %>
 	</div>
@@ -25,7 +26,7 @@
 						<br>
 						<%= f.label "Rate your over all experience" %>
 						<br>
-						<p> 1 2 3 4 5</p>
+						<p>&nbsp 1&nbsp2&nbsp3&nbsp4&nbsp5</p>
 						<%= f.radio_button :rating, 1 %>
 						<%= f.radio_button :rating, 2 %>
 						<%= f.radio_button :rating, 3 %>
