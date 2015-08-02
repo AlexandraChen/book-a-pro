@@ -16,20 +16,16 @@
     <%= render partial: 'layouts/navbar'%>
     </div>
   <% end %>
-
+  
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 notice-alert">
   <% if notice %>
-    <div class="row notice">
-      <div class="col-sm-4 col-sm-offset-4 notice-alert">
-        <p><%= notice %></p>
-      </div>
-    </div>
+      <p><%= notice %></p>  
   <% elsif alert %>
-    <div class="row alert">
-      <div class="notice-alert">   
-        <p><%= alert %></p>
-      </div>
-    </div>
+    <p><%= alert %></p>
   <% end %>
+    </div>
+  </div>
 
     <a href="#" class="scrollup">Scroll-Up</a>
     

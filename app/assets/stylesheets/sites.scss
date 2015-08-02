@@ -4,16 +4,11 @@
 .notice-alert,header, footer, .all-pros, #panel-title, #panel-slogan, #footer{
 	text-align: center;
 }
-// .notice-alert{
-// 	color: #9E2A99;
-// 	position: fixed;
-// 	z-index: 9;
-// 	margin: 0;
-// 	padding: 0;
-// }
-.notice, .alert{
+.notice-alert{
 	color: #9E2A99;
-	z-index: 9999;
+	z-index: 9;
+	margin: 0;
+	padding: 0;
 }
 #search, .main-panel{
 	min-width: 100%;
