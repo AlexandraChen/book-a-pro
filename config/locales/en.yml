@@ -69,14 +69,14 @@ en:
 
 #RESERVATIONS AND REVIEWS  
   reservation_success: "Reservation successfully made. Check your reservations."
-  reservation_fail: "Date of reservation must be in the future."
+  reservation_fail: "Reservation must be in the future."
   reservations: "Reservations"
   user_reservations: "Reservations I've made"
   no_user_reservations: "You haven't book anyone yet!"
   pro_reservations: "Reservations as Professional"
   no_pro_reservations: "No reservations made to you yet!"
   make_reservation: "Make a reservation"
-
+  review_error: "You need to make a reservation in order to write a review"
 
 
 

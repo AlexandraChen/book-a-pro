@@ -8,7 +8,7 @@ class Reservation < ActiveRecord::Base
 
 	def future_date
 		if date < DateTime.now
-			errors.add(:date, t(:reservation_fail))
+			errors.add(:date, I18n.t(:reservation_fail))
 		end
 	end
 end

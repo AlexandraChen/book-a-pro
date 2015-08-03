@@ -12,7 +12,7 @@ class Review < ActiveRecord::Base
 	def has_worked_with
 		reservations = Reservation.where(professional: professional, user: user).where("date <= ?", DateTime.now)
 		if reservations.empty?
-			errors.add(:base, "You need to make a reservation in order to write a review")
+			errors.add(:base, I18n.t(:review_error) )
 		end
 	end
 

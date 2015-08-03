@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       sign_in @user, bypass: true
       redirect_to root_path
     else
-      flash[:notice] = t(:password_fail)
+      flash[:notice] = I18n.t(:password_fail)
       render :edit_password
     end
   end
