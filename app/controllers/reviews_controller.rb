@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
 		if @review.save
 			redirect_to professional_path(@review.professional_id), 
-				notice: t(:review_success)
+				notice: I18n.t(:review_success)
 		else
 			redirect_to professional_path(@review.professional_id),
 				notice: @review.errors.full_messages.first
