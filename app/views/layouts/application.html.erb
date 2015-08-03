@@ -8,8 +8,8 @@
   <link rel="shortcut icon" href="/assets/sites/icon_header.jpg">
 </head>
 <body>
-  <div class="wrap">
-    <% if current_page?("/") %> 
+    <div class="wrap">
+      <% if current_page?("/") %> 
       <%= render partial: 'layouts/navbar' %>
     <% else %>
       <div class="nav-dif">
@@ -28,11 +28,14 @@
     </div>
 
     <a href="#" class="scrollup">Scroll-Up</a>
-    
+
     <%= yield %>
     </div>
 
+
+
     <%= render partial: 'layouts/footer' %>
+    
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
