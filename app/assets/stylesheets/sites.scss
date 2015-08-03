@@ -64,9 +64,9 @@ footer{
 }
 .main-panel{
 	height: 37em;
-	background: url("/assets/sites/boxing.jpg");
+	background: url("/assets/sites/boxing.jpg") no-repeat center center;
 	margin-top: -6em;
-	background-size: 100%;
+	background-size: cover;
 	width: 100%;
 }
 
