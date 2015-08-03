@@ -1,3 +1,6 @@
+.all-pros{
+	margin-top: 5em;
+}
 .professional-profile{
 	margin-top: 7em;
 }
@@ -70,7 +73,6 @@
 	height: 25em;
 	width:  25em;
 	top: 50%;
-	transform: translateY(-50%);
 }
 
 .prof-pic-medium img{
@@ -86,6 +88,8 @@
 	top: 50%;
 	left: 25%;
 	right: 25%;
+	width: 20em;
+  margin-left: -3.5em;
 	transform: translateY(-50%);
 	h3, h4{
 		margin: 0;
