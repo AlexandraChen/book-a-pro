@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :reviews
   validates :email, presence: true
   validates :name, presence: true
+  validates :last_name, presence: true
   has_attached_file :prof_pic,
   	:styles => { 
 	  	:medium => "300x300>",
