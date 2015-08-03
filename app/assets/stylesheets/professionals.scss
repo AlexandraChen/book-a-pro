@@ -30,6 +30,7 @@
 .pro-description{
 	font-size: 1.1em;
 	padding-top: 1em;
+	text-align: justify;
 }
 
 .form-control.pro-description{
@@ -96,4 +97,8 @@
 		top: 5em;
 		bottom: 7em;
 	}
+}
+
+.pro-details{
+	margin-left: 2em;
 }

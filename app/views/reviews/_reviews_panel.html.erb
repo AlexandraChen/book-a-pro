@@ -1,6 +1,5 @@
 <div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-
+	<div class="col-sm-10">
 			<%= render partial: "reviews/review_form", locals:{review: @review, pro_user: @pro_user}%>
 
 		<% unless @pro_user.reviews.empty? %>
