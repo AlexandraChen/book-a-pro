@@ -26,6 +26,7 @@ gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 gem 'devise'
 gem 'figaro'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'procfile'
 
 
 # Use ActiveModel has_secure_password
