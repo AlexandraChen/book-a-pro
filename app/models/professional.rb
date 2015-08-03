@@ -2,7 +2,7 @@ class Professional < ActiveRecord::Base
 	belongs_to :user
 	has_many :reservations, dependent: :destroy
 	has_many :reviews, dependent: :destroy
-	validates :title, presence: true
+	validates :title, presence: true, length: {maximum: 40}
 	validates :description, presence: true
 	validates :user, presence: true
 	validates :location, presence: true
