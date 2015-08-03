@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/users/profile'            => 'users#show', as: 'user'
   get '/reservations'             => 'reservations#reservations'
-  
+
   resources :users, only: [:edit] do
 	  collection do
       get 'edit_password' 
@@ -29,7 +29,10 @@ Rails.application.routes.draw do
       patch 'update_profpic'
     end
   end
+
   resources :professionals
   resources :reservations
   resources :reviews, only: [:new, :create]
+
+  resources :users, only: [:destroy]
 end

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 user-edit">
@@ -31,7 +32,7 @@
       <br>
       <br>
       <p>Unhappy?</p>
-      <%= link_to t("account_delete"), cancel_user_registration_path, data: { confirm: t("sure_delete") }, method: :delete %>
+      <%= link_to t("account_delete"), user_path(@user), confirm: t("sure_delete"), method: :delete %>
      </div>
   </div>
 </div>

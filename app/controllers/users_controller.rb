@@ -52,6 +52,12 @@ class UsersController < ApplicationController
     render :edit_profpic
   end
 
+  def destroy
+    @user = current_user
+    @user.destroy!
+    redirect_to root_path, notice: I18n.t(:user_delete)
+  end
+
  
 
   private

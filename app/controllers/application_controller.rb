@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     root_path#request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
 
+  def after_cancel_path_for(resource)
+    root_path
+  end
+
   protected
   	def configure_permitted_parameters
   		devise_parameter_sanitizer.for(:sign_up) << :name

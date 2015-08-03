@@ -37,6 +37,7 @@ en:
   why_vp: "Best professionals on all areas rated by their customers. "
   account_delete: "Delete my account"
   wrong_update: "Something went wrong. Please fill all the fields."
+
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my account"
@@ -67,7 +68,7 @@ en:
   location: "Location"
   location_input: "Your working locations"
   update_profile: "Update profile"
-
+  user_delete: "We are sorry to see you leave :(. Please join soon!"
 #RESERVATIONS AND REVIEWS  
   reservation_success: "Reservation successfully made. Check your reservations."
   reservation_fail: "Reservation must be in the future."
