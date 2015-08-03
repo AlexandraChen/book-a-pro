@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   def update_profile
      @user = current_user
     if @user.update_attributes(user_params)
-      redirect_to user_path, notice: "Profile successfully updated."
+      redirect_to user_path, notice: I18n.t(:pro_update_success)
     else
-      flash[:notice] = "something went wrong"
+      flash[:notice] = I18n.t(:wrong_update)
       render :edit_profile
     end
   end
@@ -45,10 +45,10 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.valid?
       @user.save
-      redirect_to user_path, notice: t(:pic_update_success)
+      redirect_to user_path, notice: I18n.t(:pic_update_success)
       return
     end
-    flash[:notice] = t(:pic_update_fail)
+    flash[:notice] = I18n.t(:pic_update_fail)
     render :edit_profpic
   end
 

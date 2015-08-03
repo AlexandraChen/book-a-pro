@@ -36,6 +36,7 @@ en:
   why_pros: "Display your professionals skills to the world. Get more appointments."
   why_vp: "Best professionals on all areas rated by their customers. "
   account_delete: "Delete my account"
+  wrong_update: "Something went wrong. Please fill all the fields."
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my account"
