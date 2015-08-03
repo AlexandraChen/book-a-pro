@@ -54,3 +54,4 @@ group :development, :test do
   gem 'letter_opener'
 end
 
+gem 'rails_12factor', group: :production
