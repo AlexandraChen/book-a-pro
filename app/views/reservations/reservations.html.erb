@@ -22,7 +22,7 @@
 			<% if current_user.professional %>
 				<div class="my-reservations" >
 					<br>
-					<%if @pro_reservations.empty? %>
+					<%if current_user.professional.reviews.empty? %>
 						<p><%= t("no_pro_reservations") %></p>
 					<% else %>
 						<% current_user.professional.reservations.each do |reservation| %>

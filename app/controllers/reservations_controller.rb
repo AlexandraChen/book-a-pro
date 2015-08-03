@@ -14,7 +14,9 @@ class ReservationsController < ApplicationController
 	
 	def reservations
 		@user_reservations = current_user.reservations.order("date ASC")
-		@pro_reservations = current_user.professional.reservations.order("date ASC")
+		if current_user.professional
+			@pro_reservations = current_user.professional.reservations.order("date ASC")
+		end
 	end
 	private
 	def reservation_params
