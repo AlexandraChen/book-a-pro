@@ -33,6 +33,10 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: :password_confirmation  %>
       </div>
+      <div class="field">
+      <%= f.label "Profile picture" %>
+      <%= f.file_field :prof_pic %>
+       </div>
       <br />
       <div class="actions">
         <%= f.submit "Sign up", class: "btn btn-default col-sm-12", id: "submit" %>

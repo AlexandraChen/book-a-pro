@@ -15,7 +15,11 @@
           <li><a href="#why"><%= t("why") %></a></li>
         <% end %>
         <% if current_user %>
-        <li><%= image_tag current_user.prof_pic.url(:thumb), class: "img-circle nav-img" %></li>
+        <% if current_user.prof_pic.present? %>
+          <li><%= image_tag current_user.prof_pic.url(:thumb), class: "img-circle nav-img" %></li>
+        <% else %>
+          <li><%= image_tag ("no_pic.png"),  class: "img-circle nav-img" %></li>
+        <% end %>
         <li class="dropdown" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
           <ul class="dropdown-menu">

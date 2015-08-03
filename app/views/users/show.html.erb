@@ -1,12 +1,12 @@
-<div class="container" id="spacer">
+<div class="container spacer">
 	<div class="row">
 		<div class="col-sm-3 col-sm-offset-1">
 			<br>
 			<div class="prof-pic-small">
-				<% if @user.prof_pic_file_name === nil%>
-					<p>Prof pic avatar here</p>	
-				<% else %>
+				<% if current_user.prof_pic.present? %>
 					<%= image_tag @user.prof_pic.url(:small)%>
+				<% else %>
+					<%= image_tag ("no_pic.png") %>
 				<% end %>
 			<div class="row">
 				<div class="col-sm-12">
