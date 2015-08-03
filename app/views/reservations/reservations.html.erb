@@ -16,8 +16,10 @@
 					<% end %>		
 				</div>	
 			</div>	
+		
 		<div class="col-sm-4 col-sm-offset-1">
 			<h4><%= t("pro_reservations") %></h4>
+			<% if current_user.professional %>
 				<div class="my-reservations" >
 					<br>
 					<%if @pro_reservations.empty? %>
@@ -30,6 +32,9 @@
 						<% end %>
 					<% end %>		
 				</div>
-			</div>
+			<% else %>
+				<%= link_to 'Create a professional profile', new_professional_path, class:"btn btn-primary btn-md" %>
+			<% end %>
+		</div>
 	</div>
 </div>
