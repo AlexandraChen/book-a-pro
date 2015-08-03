@@ -32,6 +32,10 @@
 	padding-top: 1em;
 }
 
+.form-control.pro-description{
+	height: 10em;
+}
+
 .edit-link{
 	text-align: right;
 }
@@ -57,7 +61,6 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
-
 
 .prof-pic-medium{
 	margin: auto;
@@ -85,5 +88,12 @@
 	transform: translateY(-50%);
 	h3, h4{
 		margin: 0;
+	}
+}
+
+.col-sm-6.col-sm-offset-3.pro-edit{
+	margin:{
+		top: 5em;
+		bottom: 7em;
 	}
 }

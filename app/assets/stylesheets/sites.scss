@@ -10,9 +10,10 @@
 	z-index: 9;
 	margin: -1em;
 	padding: 0;
+	width: 100%;
 }
 #search, .main-panel{
-	min-width: 100%;
+	width: 100%;
 }
 
 #search{
@@ -60,6 +61,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		position: relative;
+		width: 100%;
 	}
 	#panel-title{
 		font: {

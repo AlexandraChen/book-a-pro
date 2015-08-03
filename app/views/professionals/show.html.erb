@@ -1,11 +1,11 @@
 <div class="container professional-profile">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-1">
+		<div class="col-sm-4">
 			<div class="prof-pic">
 				<%= image_tag @pro_user.prof_pic.url(:medium)%>
 			</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
-				<p class="edit-pic-link"><%= link_to t("pic_update"), professional_edit_profpic_path  %><p>
+				<p class="edit-pic-link"><%= link_to t("pic_update"), edit_profpic_professionals_path  %><p>
 			<% end %>
 			<br>
 			<div class="pro-booking">
@@ -22,7 +22,7 @@
 			<% end %>
 			</div>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			<div class="row">
 				<div class="col-sm-6">
 					<p class="pro-name"><%= @pro_user.user.name %> </p>

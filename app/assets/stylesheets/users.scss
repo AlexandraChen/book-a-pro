@@ -45,11 +45,19 @@
 	position: absolute;
 	z-index: 9;
 	top: 50%;
-	left: 25%;
-	right: 25%;
+	width: 20em;
+  margin-left: -3.5em;
+	// left: 25%;
+	// right: 25%;
 	transform: translateY(-50%);
 	h3, h4{
 		margin: 0;
+	}
+}
+.col-sm-4.col-sm-offset-4.user-edit{
+	margin:{
+		top: 5em;
+		bottom: 17em;
 	}
 }
 
