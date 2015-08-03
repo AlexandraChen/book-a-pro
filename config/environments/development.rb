@@ -44,7 +44,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
 
   #Images active recorde paperclip
-  # Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/local/bin/"
   # #paperclip aws config
   # config.paperclip_defaults = {
   #   storage: :s3,
