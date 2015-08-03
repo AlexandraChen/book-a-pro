@@ -8,10 +8,10 @@ $(function () {
 	})
 
 	$(".prof-pic-medium").mouseenter(function(e){
-		$(e.currentTarget.children[1].children[0]).fadeOut()
+		$(e.currentTarget.children[1]).fadeOut()
 	})
 		$(".prof-pic-medium").mouseleave(function(e){
-		$(e.currentTarget.children[1].children[0]).fadeIn()
+		$(e.currentTarget.children[1]).fadeIn()
 	})
 
 	$(window).scroll(function () {
