@@ -26,8 +26,6 @@ gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 gem 'devise'
 gem 'figaro'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
-gem 'puma'
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
