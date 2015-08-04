@@ -1,9 +1,8 @@
 <%= render partial: 'sites/main_panel' %>
 
-</div>
 <div class="container all-pros">
-	<div class="row">
-		<% @pro_users.each do |pro| %>
+	<div class="row all-pros">
+		<% @pro_users.each do |pro| %> <!-- this shouldn't be here, should be taken from api:pro -->
 			<div class="col-sm-4">
 			<a href="<%= professional_path(pro.id) %>">
 				<div class="prof-pic-medium">
@@ -17,7 +16,14 @@
 				<br>
 			</div>
 		<% end %>
+
 	</div>
 </div>
 
 <%= render partial: 'layouts/why' %>
+
+<script type="text/javascript">
+	$(function () {
+		new Router()
+	})
+</script>
