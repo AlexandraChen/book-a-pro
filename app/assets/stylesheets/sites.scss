@@ -46,6 +46,7 @@ body {
 
 footer{
  	width: 100%;
+ 	bottom: 0;
  	height: 5em;
 	background-color: #222;
 	p{
@@ -83,13 +84,12 @@ footer{
 }
 
 #why{
-	margin-top: -0%;
-	height: 30em;
+	height: auto;
 	width: 100%;
 	text-align: center;
 	background-color: #F9F9F9;
 	p.why-text{
-		padding: 2em;
+		padding: 2em 2em 6em 2em ;
 		text-align: justify;
 	}
 	p.why{
