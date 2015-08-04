@@ -27,6 +27,8 @@
             <li><%= link_to t("reservations"), reservations_path %></li>
             <% if current_user.professional %>
               <li><%= link_to t("prof_profile"), professional_path(current_user.professional.id) %></li>
+            <%else %>
+            <li><%= link_to 'Create a professional profile', new_professional_path%></li>
             <% end %>
             <li role="separator" class="divider"></li>
             <li><%= link_to t("log_out"), '/logout' %></li>
