@@ -14,8 +14,10 @@
         <% if current_page?("/")%>
           <li><a href="#why"><%= t("why") %></a></li>
         <% end %>
-        <% unless current_user.professional %>
-          <li><%= link_to 'Sign up as professional', new_professional_path%></li>
+        <% if current_user %>
+          <% if current_user.professional === nil  %>
+            <li><%= link_to 'Sign up as professional', new_professional_path%></li>
+          <% end %>
         <% end %>
         <% if current_user %>
         <% if current_user.prof_pic.present? %>
