@@ -2,6 +2,11 @@
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 .notice-alert,header, footer, .all-pros, #panel-title, #panel-slogan{
 	text-align: center;
 }
@@ -12,13 +17,6 @@
 	margin: -1em;
 	padding-top: 2em;
 	width: 100%;
-}
-#search, .main-panel{
-	width: 100%;
-}
-
-#search{
-	opacity: 0.8;
 }
 
 #navbar{
@@ -39,11 +37,6 @@
 	text-shadow: 0 0 0.01em #8F7
 }
 
-html,
-body {
-  height: 100%;
-}
-
 .wrap {
   min-height: 100%;
   height: auto !important;
@@ -60,44 +53,6 @@ footer{
 	margin-top: 1.8em;
 	}
 }
-.main-panel{
-	height: 37em;
-	background: url("/assets/sites/boxing.jpg") no-repeat;
-	margin-top: -6em;
-	background-size: cover;
-	width: 100%;
-}
-
-.overlay{	
-	width: 100%;
-	height: 100%;
-	background: black; 
-	opacity: 0.4;
-}
-
-#search-form{
-	margin-top: -7em;
-}
-
-.headlines{
-  bottom: 50%;
-  transform: translateY(-50%);
-  position: relative;
-  width: 100%;
-  color: white;
-  z-index: 3;
-}
-#panel-title{
-	font: {
-		size: 3.5em;
-		weight: bold;
-	}
-}
-#panel-slogan{
-	margin: -1.5em;
-	font-size: 1.5em;
-}
-
 
 #no-avatar{
 	width: 100%;
