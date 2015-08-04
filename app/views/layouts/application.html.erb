@@ -6,8 +6,8 @@
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/assets/sites/icon_header.jpg">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- have to fix twitter bootstrap gem glyphicon -->
-
   <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
     <div class="wrap">
@@ -34,13 +34,7 @@
     <%= yield %>
     </div>
 
-
-
-    <%= render partial: 'layouts/footer' %>
-    
-   
-   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%= render partial: 'layouts/footer' %>
 
 </body>
 </html>

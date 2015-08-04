@@ -48,4 +48,8 @@ $(function () {
 		$(event.currentTarget).next().toggle()
 	})
 
+	$('#search-form').on("submit",function(event){
+		event.preventDefault()
+	})
+
 })
