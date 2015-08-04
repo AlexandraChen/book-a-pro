@@ -14,6 +14,9 @@
         <% if current_page?("/")%>
           <li><a href="#why"><%= t("why") %></a></li>
         <% end %>
+        <% unless current_user.professional %>
+          <li><%= link_to 'Sign up as professional', new_professional_path%></li>
+        <% end %>
         <% if current_user %>
         <% if current_user.prof_pic.present? %>
           <li><%= image_tag current_user.prof_pic.url(:thumb), class: "img-circle nav-img" %></li>
@@ -28,7 +31,7 @@
             <% if current_user.professional %>
               <li><%= link_to t("prof_profile"), professional_path(current_user.professional.id) %></li>
             <%else %>
-            <li><%= link_to 'Create a professional profile', new_professional_path%></li>
+              <li><%= link_to 'Create a professional profile', new_professional_path%></li>
             <% end %>
             <li role="separator" class="divider"></li>
             <li><%= link_to t("log_out"), '/logout' %></li>
