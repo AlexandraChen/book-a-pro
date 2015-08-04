@@ -1,2 +1,5 @@
-<h1> Hi, <%= @reservation.user.name %> </h1>
-You just made a reservation with <%= @reservation.professional.user.name %>
+<h3> Hi, <%= @reservation.user.name %>! </h3>
+<p>You just made a reservation with <%= @reservation.professional.user.name %> <strong>Date of reservation <%= @reservation.date.strftime("%d/%m/%y") %></strong> </p>
+<p>You can contact <%= @reservation.professional.user.name %> with this email <%= @reservation.professional.user.email %></p>
+
+<p>You can sign in to your <a href="https://bookapro.herokuapp.com"> Book-a-Pro </a> account and check your reservations whenever you want.</p>
