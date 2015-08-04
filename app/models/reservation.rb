@@ -7,7 +7,9 @@ class Reservation < ActiveRecord::Base
 	validate :future_date
 
 	def future_date
-		if date < DateTime.now
+		if date === nil
+			errors.add(:date, "Please select a date")
+		elsif date < DateTime.now
 			errors.add(:date, I18n.t(:reservation_fail))
 		end
 	end
