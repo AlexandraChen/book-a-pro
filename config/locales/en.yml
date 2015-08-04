@@ -27,6 +27,8 @@ en:
   home: "Home"
   welcome: "Welcome"
   hello: "Hello"
+  hi: "Hi"
+  to: "to"
   profile: "My profile"
   prof_profile: "My Professional profile"
   edit_profile: "Edit profile"
@@ -40,7 +42,7 @@ en:
 
 #EMAIL
   email_confirmation: "You can confirm your account email through the link below"
-  confirm_account: "Confirm my account"
+  confirm_account: "Confirm my Book-a-Pro account"
   password_reset: "You requested a link to change your password. You can do this through the link below."
   password_ignore: "If you didn't request this, please ignore athis email."
   password_notice: "Your password won't change until you access the link above and create a new one."
