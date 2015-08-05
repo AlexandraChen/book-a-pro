@@ -1,8 +1,5 @@
 #search{
 	width: 100%;
-}
-
-#search{
 	opacity: 0.8;
 	width: 100%;
 }
@@ -10,7 +7,7 @@
 .main-panel{
 	height: 37em;
 	background: url("/assets/sites/boxing.jpg") no-repeat;
-	margin-top: -6em;
+	margin-top: -7em;
 	background-size: cover;
 	width: 100%;
 }
@@ -33,15 +30,25 @@
   width: 100%;
   color: white;
   z-index: 3;
-}
-#panel-title{
-	font: {
-		size: 3.5em;
-		weight: bold;
+	#panel-title{
+		font: {
+			size: 3.5em;
+			weight: bold;
+		}
+	};
+	#panel-slogan{
+		margin: auto;
+		font-size: 1.5em;
+		width: 100%;
 	}
 }
-#panel-slogan{
-	margin: auto;
-	font-size: 1.5em;
-	width: 100%;
+
+@media (max-width: 750px) {
+   .collapse {
+      background-color: #222;
+   }
+   .navbar-header#navbar, .container-fluid {
+   		background-color: #222;
+   		width:100%;
+   }
 }
