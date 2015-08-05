@@ -8,7 +8,7 @@ $(document).ready(function() {
 		'/assets/sites/tutoring_kids.jpg',
 		'/assets/sites/boxing.jpg'
 	]
-
+	
 	function changeBackground() {
 	  currentBackground++;
 	  if(currentBackground > backgrounds.length-1) currentBackground = 0;

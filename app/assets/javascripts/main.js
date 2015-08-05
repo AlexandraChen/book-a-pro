@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 	$("#search").on("click", function(){
 		$(this).val("")
 	})
@@ -51,5 +51,6 @@ $(function () {
 	$('#search-form').on("submit",function(event){
 		event.preventDefault()
 	})
+
 
 })
