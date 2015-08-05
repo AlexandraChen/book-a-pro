@@ -36,7 +36,7 @@
 				<p class="pro-title"><%= @pro_user.title %></p>
 				<%= render partial: 'reviews/rating_overall' %>
 				<br>
-				<p class="pro-description"><%= @pro_user.description %></p>
+				<p class="pro-description"><%= simple_format @pro_user.description %></p>
 			<br>
 		</div>
 		<%= render partial: "reviews/reviews_panel" %>
