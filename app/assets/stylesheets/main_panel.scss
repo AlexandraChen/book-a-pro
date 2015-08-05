@@ -1,7 +1,5 @@
-#search{
-	width: 100%;
-	opacity: 0.8;
-	width: 100%;
+* {
+  box-sizing: border-box;
 }
 
 .main-panel{
@@ -21,6 +19,9 @@
 
 #search-form{
 	margin-top: -7em;
+}
+#search{
+	opacity: 0.8;
 }
 
 .headlines{

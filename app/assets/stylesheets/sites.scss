@@ -5,6 +5,7 @@
 html,
 body {
   height: 100%;
+  width: 100%
 }
 
 .notice-alert,header, footer, #panel-title, #panel-slogan{
@@ -35,6 +36,10 @@ body {
 	color: #B10DC9;
 	background-color: transparent;
 	text-shadow: 0 0 0.01em #8F7
+}
+
+.big-wrapper{
+	width: 100%;
 }
 
 .wrap {
