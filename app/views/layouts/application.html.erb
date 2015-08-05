@@ -34,7 +34,13 @@
     </div>
    </div>
 
-  <script>
+  <a href="#" class="scrollup">Scroll-Up</a>
+
+  <%= yield %>
+  </div>
+
+  <%= render partial: 'layouts/footer' %>
+    <script>
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '1123329817681747',
@@ -51,32 +57,5 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
   </script>
-
-  <div class="wrap">
-    <% if current_page?("/") %> 
-    <%= render partial: 'layouts/navbar' %>
-  <% else %>
-    <div class="nav-dif">
-    <%= render partial: 'layouts/navbar'%>
-    </div>
-  <% end %>
-  
-  <div class="row">
-    <div class="notice-alert">
-  <% if notice %>
-      <p><%= notice %></p>  
-  <% elsif alert %>
-    <p><%= alert %></p>
-  <% end %>
-    </div>
-  </div>
-
-  <a href="#" class="scrollup">Scroll-Up</a>
-
-  <%= yield %>
-  </div>
-
-  <%= render partial: 'layouts/footer' %>
-
 </body>
 </html>
