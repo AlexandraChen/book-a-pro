@@ -13,6 +13,7 @@
   <%= javascript_include_tag 'application'%>
 </head>
 <body>
+
     <div class="wrap">
       <% if current_page?("/") %> 
       <%= render partial: 'layouts/navbar' %>
@@ -33,10 +34,47 @@
     </div>
    </div>
 
-    <a href="#" class="scrollup">Scroll-Up</a>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1123329817681747',
+        xfbml      : true,
+        version    : 'v2.4'
+      });
+    };
 
-    <%= yield %>
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div class="wrap">
+    <% if current_page?("/") %> 
+    <%= render partial: 'layouts/navbar' %>
+  <% else %>
+    <div class="nav-dif">
+    <%= render partial: 'layouts/navbar'%>
     </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="notice-alert">
+  <% if notice %>
+      <p><%= notice %></p>  
+  <% elsif alert %>
+    <p><%= alert %></p>
+  <% end %>
+    </div>
+  </div>
+
+  <a href="#" class="scrollup">Scroll-Up</a>
+
+  <%= yield %>
+  </div>
 
   <%= render partial: 'layouts/footer' %>
 

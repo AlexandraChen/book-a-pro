@@ -16,14 +16,15 @@
         <% end %>
         <% if current_user %>
           <% if current_user.professional === nil  %>
-            <li><%= link_to 'Sign up as professional', new_professional_path%></li>
+            <li><%= link_to '+ Pro Account', new_professional_path%></li>
           <% end %>
         <% end %>
         <% if current_user %>
           <li><%= image_tag current_user.prof_pic.url(:thumb), class: "img-circle nav-img" %></li>
           <li class="dropdown" >
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
-            <ul class="dropdown-menu main">
+
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name.split(" ").first %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
               <li><%= link_to t("profile"), user_path%></li>
               <li><%= link_to t("reservations"), reservations_path %></li>
               <% if current_user.professional %>
@@ -36,7 +37,7 @@
             </ul>
           </li>
           <% else %>
-          <li><%= link_to t("sign_up"), new_user_registration_path %></li>
+          <li><a href="/users/auth/facebook"> Sign up <i class='fa fa-facebook-square'></i></a></li>
           <li><%= link_to t("log_in"), new_user_session_path %></li>
         <% end %>
       </ul>

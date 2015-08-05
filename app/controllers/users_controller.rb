@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
   before_action :is_same_user?, only: [:edit]
- 
+   
   def show
   	@user = current_user
   end
@@ -57,8 +57,6 @@ class UsersController < ApplicationController
     @user.destroy!
     redirect_to root_path, notice: I18n.t(:user_delete)
   end
-
- 
 
   private
 
