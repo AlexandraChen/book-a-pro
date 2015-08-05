@@ -37,7 +37,8 @@
             </ul>
           </li>
           <% else %>
-          <li><a href="/users/auth/facebook"> Sign up <i class='fa fa-facebook-square'></i></a></li>
+           <li><%= link_to t("sign_up"), new_user_registration_path %></li>
+<!--           <li><a href="/users/auth/facebook"> Sign up <i class='fa fa-facebook-square'></i></a></li> -->
           <li><%= link_to t("log_in"), new_user_session_path %></li>
         <% end %>
       </ul>
