@@ -13,7 +13,9 @@ class Professional < ActiveRecord::Base
 		  	:medium => "336x336>",
 		  	:thumb => "100x100>", 
 		  	:small => "200x200#"  
-  		}
+  		},
+  		 :default_url => "no_pic.png"
+  		 
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
 
  	def self.search(query)
