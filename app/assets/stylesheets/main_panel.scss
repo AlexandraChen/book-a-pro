@@ -30,7 +30,7 @@
   position: relative;
   width: 100%;
   color: white;
-  z-index: 3;
+  z-index: 2;
 	#panel-title{
 		font: {
 			size: 3.5em;
@@ -38,13 +38,13 @@
 		}
 	};
 	#panel-slogan{
-		margin: auto;
+		margin-top: -1em;
 		font-size: 1.5em;
 		width: 100%;
 	}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
    .collapse {
       background-color: #222;
    }

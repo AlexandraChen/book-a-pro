@@ -23,7 +23,7 @@
           <li><%= image_tag current_user.prof_pic.url(:thumb), class: "img-circle nav-img" %></li>
           <li class="dropdown" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu main">
               <li><%= link_to t("profile"), user_path%></li>
               <li><%= link_to t("reservations"), reservations_path %></li>
               <% if current_user.professional %>

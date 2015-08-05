@@ -10,6 +10,9 @@
 						<% @user_reservations.each do |reservation| %>
 							<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.professional.user.name %> 
 							| <a class="view-reservation">View more details</a>
+							<% if reservation.date < DateTime.now %>
+								<%= link_to "Write a review", professional_path(reservation.professional.id) %>
+							<% end %>
 							<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
 							<br>
 						<% end %>
@@ -22,7 +25,7 @@
 			<% if current_user.professional %>
 				<div class="my-reservations" >
 					<br>
-					<%if current_user.professional.reviews.empty? %>
+					<%if current_user.professional.reservations.empty? %>
 						<p><%= t("no_pro_reservations") %></p>
 					<% else %>
 						<% current_user.professional.reservations.each do |reservation| %>

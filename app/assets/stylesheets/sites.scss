@@ -19,14 +19,17 @@ body {
 	padding-top: 2em;
 	width: 100%;
 }
-
+.dropdown-menu.main{
+	z-index: 1000;
+	opacity: 0.7;
+}
 #navbar{
 	border-radius: 0px;
 	margin: 0;
 	background-color: transparent;
 	font-weight: bold;
 	border: none;
-	 z-index:3 !important;
+	z-index:3 !important;
 }
 
 #navbar>li>a, #navbar>a{
@@ -37,7 +40,10 @@ body {
 	background-color: transparent;
 	text-shadow: 0 0 0.01em #8F7
 }
-
+.navbar-inverse .navbar-nav>.open>a{
+    color: #fff;
+    background-color: transparent;
+}
 .big-wrapper{
 	width: 100%;
 }
