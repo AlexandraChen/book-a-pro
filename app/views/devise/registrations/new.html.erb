@@ -7,8 +7,8 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field "Name and last name", autofocus: true, class: "form-control", placeholder: :name %>
+        <%= f.label "Full name" %><br />
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Name and last name" %>
       </div>
 
       <div class="field">
