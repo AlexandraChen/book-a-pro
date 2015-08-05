@@ -9,7 +9,6 @@
 	background: url("/assets/sites/boxing.jpg") no-repeat;
 	margin-top: -7em;
 	background-size: cover;
-	width: 100%;
 }
 
 .overlay{	
@@ -30,6 +29,8 @@
   width: 100%;
   color: white;
   z-index: 3;
+  width: 60%;
+	margin: auto;
 	#panel-title{
 		font: {
 			size: 3.5em;

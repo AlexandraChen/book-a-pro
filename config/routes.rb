@@ -1,5 +1,5 @@
 Rails.application.routes.draw do  
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root 'sites#index'
   devise_scope :user do ## delete and use proper route
     get '/logout', to: 'devise/sessions#destroy', as: :signout
