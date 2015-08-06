@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   has_many :reviews
   validates :email, presence: true, length: {maximum: 250}
-  validates :name, presence: true
+  validates :name, presence: true #space validation
   # validates :last_name, presence: true, length: {maximum: 30}
   has_attached_file :prof_pic,
   	:styles => { 

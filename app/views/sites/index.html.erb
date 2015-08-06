@@ -7,10 +7,10 @@
 			<a href="<%= professional_path(pro.id) %>">
 				<div class="prof-pic-medium">
 					<div class="prof-pic-title">
-						<% if pro.user.last_name.empty? %>
-						<p class="pro-name"><%= pro.user.name.split(" ").first.capitalize %> <%= pro.user.name.split(" ").second.capitalize %></p>
-					<% else %>
+						<% if pro.user.last_name %>
 						<p class="pro-name"><%= pro.user.name%> <%= pro.user.last_name%></p>
+					<% else %>
+						<p class="pro-name"><%= pro.user.name.split(" ").first.capitalize %> <%= pro.user.name.split(" ").second.capitalize %></p>
 					<% end %>
 						<p class="pro-title"><%= pro.title %></p>
 					</div>

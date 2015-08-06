@@ -2,10 +2,10 @@
 	<div class="col-sm-12 stars-write">
 		<%= render partial: 'reviews/rating_overall' %>
 		<% unless @pro_user.reviews.empty? %>
-			<% if @pro_user.user.last_name.empty? %>
-				<p><%= @pro_user.user.name.split(" ").first.capitalize %>'s over-all rating</p>
-			<% else %>
+			<% if @pro_user.user.last_name %>
 				<p><%= @pro_user.user.name%>'s over-all rating</p>
+			<% else %>
+				<p><%= @pro_user.user.name.split(" ").first.capitalize %>'s over-all rating</p>
 			<% end %>
 		<% end %>
 		<br>

@@ -4,33 +4,38 @@
 			<h3><%= t("user_reservations") %></h3>
 				<div class="my-reservations" >
 					<br>
-					<p><strong>Future reservations</strong></p>
 					<%if current_user.reservations.empty?%>
-						<p><%= t("no_user_reservations") %></p>
+							<p><%= t("no_user_reservations") %></p>
+					
 					<% else %>
-						<% @user_reservations.each do |reservation| %>
-							<%= reservation.date.strftime("%d/%m/%y") %> with 	
-							<% if reservation.professional.user.last_name.empty? %>
-								<%= link_to  reservation.professional.user.name.split(" ").first.capitalize + " " + reservation.professional.user.name.split(" ").second.capitalize, professional_path(reservation.professional.id) %> 
-							<% else %>
-								<%= link_to reservation.professional.user.name + " " + reservation.professional.user.last_name, professional_path(reservation.professional.id) %>
+						<% if @user_reservations.empty? %>
+							<p>You don't have any future reservations</p>						
+						<% else %>
+							<h4><strong>Future reservations</strong></h4>
+							<% @user_reservations.each do |reservation| %>
+								<%= reservation.date.strftime("%d/%m/%y") %> with 	
+								<% unless reservation.professional.user.last_name %>
+									<%= link_to  reservation.professional.user.name.split(" ").first.capitalize + " " + reservation.professional.user.name.split(" ").second.capitalize, professional_path(reservation.professional.id) %> 
+								<% else %>
+									<%= link_to reservation.professional.user.name + " " + reservation.professional.user.last_name, professional_path(reservation.professional.id) %>
+								<% end %>
+								<% if reservation.date < DateTime.now %>
+									| <%= link_to "Tell us about your experience", professional_path(reservation.professional.id) %>
+								<% else %>
+									| <a class="view-reservation">View more details</a>
+								<% end %>
+								<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
+								<br>
 							<% end %>
-							<% if reservation.date < DateTime.now %>
-								| <%= link_to "Tell us about your experience", professional_path(reservation.professional.id) %>
-							<% else %>
-								| <a class="view-reservation">View more details</a>
-							<% end %>
-							<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
-							<br>
 						<% end %>
 						<hr>
 						<% if @user_past_reservations %>
-							<p><strong>Past reservations</strong></p>
+							<h4><strong>Past reservations</strong></h4>
 							<% @user_past_reservations.each do |reservation| %>
 							<div class="row">
-								<div class="col-sm-6 reservation-line">
+								<div class="col-sm-7 reservation-line">
 								<%= reservation.date.strftime("%d/%m/%y") %> with 	
-								<% if reservation.professional.user.last_name.empty? %>
+								<% unless reservation.professional.user.last_name %>
 									<%= link_to  reservation.professional.user.name.split(" ").first.capitalize + " " + reservation.professional.user.name.split(" ").second.capitalize, professional_path(reservation.professional.id) %> 
 									</div>
 								<% else %>
@@ -39,7 +44,7 @@
 								<% end %>
 							
 								<% if reservation.date < DateTime.now %>
-									<%= link_to "Review your experience", professional_path(reservation.professional.id), class: "btn btn-primary reservation-review col-sm-4 col-sm-offset-1" %>
+									<%= link_to "Review your experience", professional_path(reservation.professional.id), class: "btn btn-primary reservation-review col-sm-4" %>
 								</div>
 								<% else %>
 									| <a class="view-reservation">View more details</a>
@@ -58,22 +63,26 @@
 				<div class="my-reservations" >
 					<br>
 					<%if current_user.professional.reservations.empty? %>
-						<p><%= t("no_pro_reservations") %></p>
+						<h><%= t("no_pro_reservations") %></h4>
 					<% else %>
-						<p><strong>Future reservations</strong></p>
-						<% @pro_reservations.each do |reservation| %>
-							<%= reservation.date.strftime("%d/%m/%y") %> with 
-							<% if reservation.user.last_name.empty? %>
-								<%= reservation.user.name.split(" ").first.capitalize %> <%= reservation.user.name.split(" ").second.capitalize %>
-							<% else %>
-								<%= reservation.user.name %> <%= reservation.user.last_name %>
+						<h4><strong>Future reservations</strong></h4>
+						<% if @pro_reservations.empty? %>
+							<p>You don't have any future reservations</p>
+						<% else %>
+							<% @pro_reservations.each do |reservation| %>
+								<%= reservation.date.strftime("%d/%m/%y") %> with 
+								<% unless reservation.user.last_name %>
+									<%= reservation.user.name.split(" ").first.capitalize %> <%= reservation.user.name.split(" ").second.capitalize %>
+								<% else %>
+									<%= reservation.user.name %> <%= reservation.user.last_name %>
+								<% end %>
+								| <a class="view-reservation">View more details</a>
+							<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
 							<% end %>
-							| <a class="view-reservation">View more details</a>
-						<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
 						<% end %>
 						<hr>
 						<% if @pro_past_resevations %>
-							<p><strong>Past reservations</strong></p>
+							<h4><strong>Past reservations</strong></h4>
 							<% @pro_past_reservations.each do |reservation| %>
 								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
 								| <a class="view-reservation">View more details</a>
