@@ -13,9 +13,11 @@ class ReservationsController < ApplicationController
 	end
 	
 	def reservations
-		@user_reservations = current_user.reservations.order("date ASC")
+		@user_past_reservations = current_user.reservations.where("date < ?", DateTime.now).order("date ASC")
+		@user_reservations = current_user.reservations.where("date > ?", DateTime.now).order("date ASC")
 		if current_user.professional
-			@pro_reservations = current_user.professional.reservations.order("date ASC")
+			@pro_reservations = current_user.professional.reservations.where("date > ?", DateTime.now).order("date ASC")
+			@pro_past_reservations = current_user.professional.reservations.where("date < ?", DateTime.now).order("date ASC")
 		end
 	end
 	private
