@@ -9,7 +9,7 @@
 			<% end %>
 			<br>
 			<div class="pro-booking">
-				<p><i class="fa fa-usd"></i><%= @pro_user.price_hr%>/hr</p>
+				<p><i class="fa fa-usd"></i><%= @pro_user.price_hr.to_i%>/hr</p>
 				<p><i class="fa fa-map-marker"></i><%= @pro_user.location %></p>
 			<% if current_user %>
 				<% if current_user.id != @pro_user.user.id %>
