@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   has_many :reviews
   validates :email, presence: true, length: {maximum: 250}
-  validates :name, presence: true, length: {maximum: 30}
+  validates :name, presence: true, length: {maximum: 50}, format: {with: /[\w]+([\s]+[\w]+){1}+/}
   # validates :last_name, presence: true, length: {maximum: 30}
   has_attached_file :prof_pic,
   	:styles => { 
