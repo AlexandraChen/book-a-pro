@@ -9,9 +9,13 @@ $(document).ready(function () {
 
 	$(".prof-pic-medium").mouseenter(function(e){
 		$(e.currentTarget.children[1]).fadeOut()
+		$(e.currentTarget.children[0].children[0]).css({color: "black"})
+		$(e.currentTarget.children[0].children[1]).css({color: "#B10DC9"})
 	})
 		$(".prof-pic-medium").mouseleave(function(e){
 		$(e.currentTarget.children[1]).fadeIn()
+		$(e.currentTarget.children[0].children[0]).css({color: "white"})
+		$(e.currentTarget.children[0].children[1]).css({color: "white"})
 	})
 
 	$(window).scroll(function () {
