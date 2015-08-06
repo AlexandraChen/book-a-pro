@@ -7,7 +7,11 @@
 			<a href="<%= professional_path(pro.id) %>">
 				<div class="prof-pic-medium">
 					<div class="prof-pic-title">
-						<p class="pro-name"><%= pro.user.name %></p>
+						<% if pro.user.last_name.empty? %>
+						<p class="pro-name"><%= pro.user.name.split(" ").first.capitalize %> <%= pro.user.name.split(" ").second.capitalize %></p>
+					<% else %>
+						<p class="pro-name"><%= pro.user.name%> <%= pro.user.last_name%></p>
+					<% end %>
 						<p class="pro-title"><%= pro.title %></p>
 					</div>
 					<%= image_tag pro.prof_pic.url(:medium),class: "pro-img"%>

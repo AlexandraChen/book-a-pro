@@ -22,13 +22,14 @@
 			<% end %>
 			</div>
 		</div>
+		
 		<div class="col-sm-7 pro-details">
 			<div class="row">
 				<div class="col-sm-6">
 					<% if @pro_user.user.last_name.empty? %>
 						<p class="pro-name"><%= @pro_user.user.name.split(" ").first.capitalize %> <%= @pro_user.user.name.split(" ").second.capitalize %></p>
 					<% else %>
-						<p class="pro-name"><%= @pro_user.user.name%></p>
+						<p class="pro-name"><%= @pro_user.user.name%> <%= @pro_user.user.last_name%></p>
 					<% end %>
 				</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
@@ -40,7 +41,7 @@
 				<p class="pro-title"><%= @pro_user.title %></p>
 				<%= render partial: 'reviews/rating_overall' %>
 				<br>
-				<p class="pro-description"><%= simple_format @pro_user.description %></p>
+				<%= simple_format @pro_user.description, class: "pro-description"%>
 			<br>
 		</div>
 		<%= render partial: "reviews/reviews_panel" %>

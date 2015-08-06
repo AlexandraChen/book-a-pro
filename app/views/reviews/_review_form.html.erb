@@ -1,6 +1,14 @@
 <div class="row">
 	<div class="col-sm-12 stars-write">
 		<%= render partial: 'reviews/rating_overall' %>
+		<% unless @pro_user.reviews.empty? %>
+			<% if @pro_user.user.last_name.empty? %>
+				<p><%= @pro_user.user.name.split(" ").first.capitalize %>'s over-all rating</p>
+			<% else %>
+				<p><%= @pro_user.user.name%>'s over-all rating</p>
+			<% end %>
+		<% end %>
+		<br>
 		<% if current_user %>
 			<% if current_user.id === pro_user.user.id %>
 				<button type="submit" class="btn btn-default btn-md review-btn" disabled>Write a review</button>
