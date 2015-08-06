@@ -1,19 +1,21 @@
+<div>
+	<div class="main-panel">
+		<div class="overlay">
+		</div>
+		<div class="headlines">
+			<p id="panel-title"> <%= t("main_panel_title") %> </p>
+			<br>
+			<p id="panel-slogan"> <%= t("main_panel_slogan") %></p>
+		</div>
+	</div>
+	<div class="col-sm-4 col-sm-offset-4">
+		<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
+	  	<%= text_field_tag :search, params[:search], class:"form-control search-query", placeholder:"Search" %>
+	<!--     <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
+		<% end %>
+	</div>
+</div>
 
-<div class="main-panel">
-	<div class="overlay">
-	</div>
-	<div class="headlines">
-		<p id="panel-title"> <%= t("main_panel_title") %> </p>
-		<br>
-		<p id="panel-slogan"> <%= t("main_panel_slogan") %></p>
-	</div>
-</div>
-<div class="col-sm-4 col-sm-offset-4">
-	<%= form_tag(root_path, :method => "get", id: "search-form", role: "search") do %>
-  	<%= text_field_tag :search, params[:search], class:"form-control search-query", placeholder:"Search" %>
-<!--     <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button> -->
-	<% end %>
-</div>
 
 
 

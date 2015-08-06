@@ -1,8 +1,7 @@
 .all-pros{
-	margin: 5em 0 5em 0;
 	margin: auto;
-	margin-top: 5em;
-	margin-bottom: 5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	text-align: center;
 }
 .professional-profile{
@@ -83,10 +82,10 @@
 }
 
 .prof-pic-medium img{
-	 // width: auto;
-  // max-width: 100%;
-  // height: auto;
-  // max-height: 100%;
+	width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 	text-align: center;
 	position: relative;
 	top: 50%;
@@ -116,4 +115,62 @@
 
 .pro-details{
 	margin-left: 2em;
+}
+
+@media (max-width: 767px) {
+	.all-pros{
+		margin-top: 3em;
+	};
+	p#panel-title{
+		font-size: 10em;
+		width: 100%;
+	}
+}
+
+
+@media (max-width: 550px) {
+	.all-pros{
+		margin-top: 3em;
+	};
+	.headlines #panel-title{
+		font-size: 2em;
+		width: 100%;
+	};
+	.headlines #panel-slogan{
+		font-size: 1em;
+	};
+	.headlines{
+		width: 100%;
+	};
+	.main-panel{
+		height: 30em;
+		width: 100%;
+		background: url("/assets/sites/boxing.jpg") no-repeat center center;
+		margin-top: -7em;
+		background-size: cover;
+	};
+	.prof-pic-medium{
+
+		margin: auto;
+		background: #F9F9F9;
+		position: relative;
+		height: 15em;
+		width:  15em;
+		top: 50%;
+	};
+	div.prof-pic-title{
+		width: 100%;
+	};
+	.pro-title{
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #B10DC9;
+	}
+	.pro-name{
+		font-size: 1em;
+		font-weight: bold;
+		padding-bottom: 0;
+		color: black;
+	}
+
 }
