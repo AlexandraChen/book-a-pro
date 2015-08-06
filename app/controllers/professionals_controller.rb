@@ -14,7 +14,7 @@ class ProfessionalsController < ApplicationController
 	end
 
 	def new
-		@pro_user = Professional.new
+		@pro_user = current_user.build_professional
 	end
 
 	def create
@@ -24,6 +24,7 @@ class ProfessionalsController < ApplicationController
 		else
 			flash[:notice] = I18n.t(:pro_new_fail)
 			render :new
+			# redirect_to new_professional_path
 		end
 	end
 

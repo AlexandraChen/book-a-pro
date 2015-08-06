@@ -7,7 +7,7 @@ class Professional < ActiveRecord::Base
 	validates :user, presence: true
 	validates :location, presence: true
 	validates :price_hr, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ } , numericality: {:greater_than => 0} 
-
+	validates :prof_pic, presence: true
 	has_attached_file :prof_pic,
   		:styles => { 
 		  	:medium => "336x336>",
@@ -15,8 +15,8 @@ class Professional < ActiveRecord::Base
 		  	:small => "200x200#"  
   		},
   		 :default_url => "no_pic.png"
-  		 
  	validates_attachment_content_type :prof_pic, :content_type => /\Aimage\/.*\Z/
+ 	validates_attachment_presence :prof_pic
 
  	def self.search(query)
  		joins(:user).where("lower(name) LIKE ? OR lower(title) LIKE ? OR lower(location) like ?", 
