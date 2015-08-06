@@ -1,6 +1,6 @@
 <div class="container spacer">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-1">
+		<div class="col-sm-5 col-sm-offset-1">
 			<h4><%= t("user_reservations") %></h4>
 				<div class="my-reservations" >
 					<br>
@@ -8,10 +8,16 @@
 						<p><%= t("no_user_reservations") %></p>
 					<% else %>
 						<% @user_reservations.each do |reservation| %>
-							<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.professional.user.name %> 
-							| <a class="view-reservation">View more details</a>
+							<%= reservation.date.strftime("%d/%m/%y") %> with 	
+							<% if reservation.professional.user.last_name.empty? %>
+								<%= link_to  reservation.professional.user.name.split(" ").first.capitalize + " " + reservation.professional.user.name.split(" ").second.capitalize, professional_path(reservation.professional.id) %> 
+							<% else %>
+								<%= link_to reservation.professional.user.name + " " + reservation.professional.user.last_name, professional_path(reservation.professional.id) %>
+							<% end %>
 							<% if reservation.date < DateTime.now %>
-								<%= link_to "Write a review", professional_path(reservation.professional.id) %>
+								| <%= link_to "Tell us about your experience", professional_path(reservation.professional.id) %>
+							<% else %>
+								| <a class="view-reservation">View more details</a>
 							<% end %>
 							<%= render partial: 'reservations/reservation_user', locals: {reservation: reservation}%>
 							<br>
@@ -20,7 +26,7 @@
 				</div>	
 			</div>	
 		
-		<div class="col-sm-4 col-sm-offset-1">
+		<div class="col-sm-5">
 			<h4><%= t("pro_reservations") %></h4>
 			<% if current_user.professional %>
 				<div class="my-reservations" >

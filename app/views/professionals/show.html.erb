@@ -25,7 +25,11 @@
 		<div class="col-sm-7 pro-details">
 			<div class="row">
 				<div class="col-sm-6">
-					<p class="pro-name"><%= @pro_user.user.name %></p>
+					<% if @pro_user.user.last_name.empty? %>
+						<p class="pro-name"><%= @pro_user.user.name.split(" ").first.capitalize %> <%= @pro_user.user.name.split(" ").second.capitalize %></p>
+					<% else %>
+						<p class="pro-name"><%= @pro_user.user.name%> <%= @pro_user.user.last_name%></p>
+					<% end %>
 				</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
 				<div class="col-sm-6 pull-right edit-link">
