@@ -20,6 +20,7 @@
 	padding-bottom: 0;
 	color: white;
 	margin-bottom: 0;
+	// transition: all 0.5s ease;
 }
 
 .pro-title-profile{
@@ -89,18 +90,30 @@
   max-height: 100%;
 	text-align: center;
 	position: relative;
-	top: 50%;
+	// top: 50%;
+	margin-top: 50%;
 	transform: translateY(-50%);
+	z-index:1;
 }
 
+// .overlay-prof{
+// 	width: auto;
+//   max-width: 100%;
+//   height: auto;
+//   max-height: 100%;
+//   background-color: black;
+//   z-index:9999;
+// }
+
 .prof-pic-title{
-	position: absolute;
+	padding: 1em;
+  position: absolute;
+	// background-color: #F9F9F9;
 	z-index: 9;
+	// top: 50%;
 	top: 50%;
-	left: 25%;
-	right: 25%;
-	width: 20em;
-  margin-left: -3.5em;
+	text-align:center;
+ 	width: 100%;
 	transform: translateY(-50%);
 	h3, h4{
 		margin: 0;
