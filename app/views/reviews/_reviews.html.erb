@@ -35,7 +35,7 @@
 	    	<% end %>
 	    	<%= review.title %>
 	    	<br>
-	    	by <%= review.user.name%>
+	    	by <%= review.user.name%> on <%= review.created_at.strftime("%d/%m/%y") %>
 	  <div class="review-description">
 	    <p><%= review.description %></p>
 	  </div>

@@ -6,6 +6,7 @@ class ProfessionalsController < ApplicationController
 		@review = Review.new
 		@rating = 0
 		unless @pro_user.reviews.empty?
+			@pro_user_reviews = @pro_user.reviews.order("created_at DESC")
 			@pro_user.reviews.each do |review|
 				@rating+=review.rating
 			end

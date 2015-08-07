@@ -4,7 +4,7 @@
 		<% unless @pro_user.reviews.empty? %>
 			<div class="review-panel">
 				<div class="row">
-					<% @pro_user.reviews.each do |review, index| %>
+					<% @pro_user_reviews.each do |review, index| %>
 						<%= render partial: "reviews/reviews", locals: { review: review } %>
 					<% end %>
 				</div>
