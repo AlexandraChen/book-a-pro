@@ -69,6 +69,7 @@
 								<% end %>
 								| <a class="view-reservation">View more details</a>
 							<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
+							<br>
 							<% end %>
 						<% end %>
 						<hr>
@@ -78,6 +79,7 @@
 								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
 								| <a class="view-reservation">View more details</a>
 							<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
+
 							<% end %>
 						<% end %>
 					<% end %>		
