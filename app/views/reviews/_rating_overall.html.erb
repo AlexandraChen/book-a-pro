@@ -6,7 +6,7 @@
 			<i class="fa fa-star-o" id="over-all"></i>
 			<i class="fa fa-star-o" id="over-all"></i>
 			<i class="fa fa-star-o" id="over-all"></i>
-			<p> <%= @pro_user.user.name %> has 0 reviews. Write the first one!</p>
+			<p> <%= @pro_user.user.name %> <%=t("no_reviews") %></p>
 		<% else %>
 			<% case @rating %>
 				<% when 1 %>

@@ -8,7 +8,7 @@ body {
   width: 100%
 }
 
-.notice-alert,header, footer, #panel-title, #panel-slogan{
+.notice-alert, header, footer, #panel-title, #panel-slogan{
 	text-align: center;
 }
 .notice-alert{
@@ -114,6 +114,7 @@ footer{
 		color: #cae401;
 	}
 	.fa{
+    padding-top: 1em;
 		font-size: 2em;
 		color: #B10DC9;
 	}

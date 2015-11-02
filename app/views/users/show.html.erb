@@ -30,13 +30,13 @@
 			<% end %>
 			<br>
 			<p>E-mail: <%= @user.email %></p>
-			<p>Password: ******* <%= link_to "Change your password", edit_password_users_path %></p>
+			<p>Password: ******* <%= link_to t("change_password"), edit_password_users_path %></p>
 			<br>
 			<br>
 			<% if current_user.professional %>
-				<%= link_to "View my professional profile", professional_path(@user.professional.id) %>
+				<%= link_to t("view_pro"), professional_path(@user.professional.id) %>
 			<% else %>
-				<%= link_to 'Create a professional profile', new_professional_path, class:"btn btn-primary btn-md" %>
+				<%= link_to t("create_pro"), new_professional_path, class:"btn btn-primary btn-md" %>
 			<%end %>
 		</div>
 

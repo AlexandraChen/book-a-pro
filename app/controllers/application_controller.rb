@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  before_action :set_locale
+ 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
   protected
   	def configure_permitted_parameters
   		devise_parameter_sanitizer.for(:sign_up) << :name

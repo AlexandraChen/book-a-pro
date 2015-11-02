@@ -1,13 +1,13 @@
 <div class="reservation-form"  hidden>
 	<%= form_for reservation do |f| %>
 	<br>
-		<%= f.label "When?" %>
+		<%= f.label t("when") %>
 		<br>
 		<%= f.date_field :date, class: "col-sm-8 col-sm-offset-2 "%>
 		<br>
 		<%= f.hidden_field :professional_id, value: @pro_user.id %>
 		<br>
 		<br>
-		<%= f.submit "Request reservation", class: "btn btn-default" %>
+		<%= f.submit t("request_reservation"), class: "btn btn-default" %>
 	<% end %>
 </div>

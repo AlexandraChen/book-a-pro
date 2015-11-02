@@ -35,14 +35,30 @@ en:
   prof_profile: "My Professional profile"
   edit_profile: "Edit profile"
   sure_delete: "Are you sure you want to delete your profile?"
+  search: "Search"
+#WHY
   why: "Why"
   why_users: "Find and book the best expert. Look at their backgrounds and others people's experiences working with them. Make an appointment right away. "
   why_pros: "Display your professionals skills to the world. Get more appointments."
   why_vp: "Community of the best professionals rated by you."
   account_delete: "Delete my account"
   wrong_update: "Something went wrong. Please fill all the fields."
-
+  you: "You"
+  you_as_professional: "You as a professional"
+  community: "Community"
+#SIGN UP AND LOG IN
+  full_name: "Full name"
+  full_name_placeholder: "Name and last name"
+  password: "Password"
+  password_length: "characters minimum"
+  #DEVISE
+  password_confirmation: "Password confirmation"
+  sign_in_existing: "Already have an account? Sign up."
+  forgot_password: "Forgot your password?"
+  missing_instructions: "Didn't receive instructions?"
+  remember_me: "Remember me"
 #EMAIL
+  email: "Email"
   email_confirmation: "You can confirm your account email through the link below"
   confirm_account: "Confirm my Book-a-Pro account"
   password_reset: "You requested a link to change your password. You can do this through the link below."
@@ -52,14 +68,18 @@ en:
   account_unlock_notice: "Click the link below to unlock your account:"
   account_unlock: "Unlock my account"
 #USERS AND PROS
+  profile_pic: "Profile picture"
   pic_update_success: "Profile picture succesfully saved."
   pic_update: "Edit profile picture"
   pic_update_fail: "Make sure you choose a picture."
   review_success: "Review sucessfully posted."
+  change_password: "Change your password"
   password_fail: "Password doesn't match. Try again."
   password_no_change: "(leave blank if you don't want to change it)"
   password_current: "(we need your current password to confirm your changes)"
   password_new: "New password"
+  view_pro: "View my professional profile"
+  create_pro: "Create my professional profile"
   pro_new_success: "Professional profile successfully created."
   pro_new_fail: "Something went wrong. Please, make sure you fill all the fields."
   pro_update_success: "Profile succesfully updated."
@@ -74,6 +94,8 @@ en:
   update_profile: "Update profile"
   user_delete: "We are sorry to see you leave :(. Please join soon!"
 #RESERVATIONS AND REVIEWS  
+  when: "When?"
+  request_reservation: "Request reservation"
   reservation_success: "Reservation successfully made. Check your reservations."
   reservation_fail: "Reservation must be in the future."
   reservations: "Reservations"
@@ -83,7 +105,7 @@ en:
   no_pro_reservations: "No reservations made to you yet!"
   make_reservation: "Make a reservation"
   review_error: "You need to make a reservation in order to write a review"
-
+  no_reviews: "has 0 reviews. Write the first one!"
 
 
 

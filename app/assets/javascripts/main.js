@@ -32,29 +32,15 @@ $(document).ready(function () {
       return false;
   	});
 
-  $("button.review-btn").on("click",function(){
-		$(".reviews-form").toggle();
-	})
-
-  $("#make-reservation").on("click",function(){
-		$(".reservation-form").toggle()
-	})
-
-	$("#user-reservations").on("click", function(){
-		$("#user-reservations").toggle()
-	})
-
-	$("#pro-reservations").on("click", function(){
-		$(".my-reservations").toggle()
-	})
-
-	$(".view-reservation").on("click", function(event){
-		$(event.currentTarget).next().toggle()
-	})
-
-	$('#search-form').on("submit",function(event){
-		event.preventDefault()
-	})
-
+  $('a[href^="#why"]').on('click',function (event) {
+    event.preventDefault()
+    var target = this.hash
+    var $target = $(target)
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+      window.location.hash = target
+   })
+  })
 
 })
