@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 		@user_past_reservations = current_user.reservations.past
 		@user_reservations = current_user.reservations.future
 		if current_user.professional
-			@pro_reservations = current_user.professional.reservations.past
+			@pro_reservations = current_user.professional.reservations.future
 			@pro_past_reservations = current_user.professional.reservations.past
 		end
 	end

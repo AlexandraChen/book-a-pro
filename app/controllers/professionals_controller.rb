@@ -8,7 +8,7 @@ class ProfessionalsController < ApplicationController
 		unless @pro_user.reviews.empty?
 			@pro_user_reviews = @pro_user.reviews.order("created_at DESC")
 			@pro_user.reviews.each do |review|
-				@rating+=review.rating
+				@rating += review.rating
 			end
 			@rating = @rating / @pro_user.reviews.count
 		end

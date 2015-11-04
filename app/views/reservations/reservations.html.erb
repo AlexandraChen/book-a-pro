@@ -5,7 +5,7 @@
 				<div class="my-reservations" >
 					<br>
 					<%if current_user.reservations.empty?%>
-							<p><%= t("no_user_reservations") %></p>
+						<p><%= t("no_user_reservations") %></p>
 					<% else %>
 						<h4><strong>Future reservations</strong></h4>
 						<% if @user_reservations.length <= 0 %>
@@ -53,7 +53,7 @@
 			<% if current_user.professional %>
 				<div class="my-reservations" >
 					<br>
-					<%if current_user.professional.reservations.empty? %>
+					<% if current_user.professional.reservations.empty? %>
 						<h><%= t("no_pro_reservations") %></h4>
 					<% else %>
 						<h4><strong>Future reservations</strong></h4>
@@ -73,13 +73,12 @@
 							<% end %>
 						<% end %>
 						<hr>
-						<% if @pro_past_resevations %>
+						<% if @pro_past_reservations %>
 							<h4><strong>Past reservations</strong></h4>
 							<% @pro_past_reservations.each do |reservation| %>
 								<%= reservation.date.strftime("%d/%m/%y") %> with <%= reservation.user.name%>
 								| <a class="view-reservation">View more details</a>
 							<%= render partial: "reservations/reservation_pro", locals: {reservation: reservation}%>
-
 							<% end %>
 						<% end %>
 					<% end %>		
