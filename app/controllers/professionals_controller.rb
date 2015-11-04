@@ -10,7 +10,7 @@ class ProfessionalsController < ApplicationController
 			@pro_user.reviews.each do |review|
 				@rating+=review.rating
 			end
-			@rating = @rating. / @pro_user.reviews.count
+			@rating = @rating / @pro_user.reviews.count
 		end
 	end
 

@@ -13,13 +13,14 @@ class ReservationsController < ApplicationController
 	end
 	
 	def reservations
-		@user_past_reservations = current_user.reservations.where("date < ?", DateTime.now).order("date ASC")
-		@user_reservations = current_user.reservations.where("date > ?", DateTime.now).order("date ASC")
+		@user_past_reservations = current_user.reservations.past
+		@user_reservations = current_user.reservations.future
 		if current_user.professional
-			@pro_reservations = current_user.professional.reservations.where("date > ?", DateTime.now).order("date ASC")
-			@pro_past_reservations = current_user.professional.reservations.where("date < ?", DateTime.now).order("date ASC")
+			@pro_reservations = current_user.professional.reservations.past
+			@pro_past_reservations = current_user.professional.reservations.past
 		end
 	end
+
 	private
 	def reservation_params
 		params.require(:reservation).permit(:date, :professional_id)

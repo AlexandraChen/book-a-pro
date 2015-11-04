@@ -4,15 +4,19 @@ class Reservation < ActiveRecord::Base
 	validates :date, presence: true
 	validates :user, presence: true
 	validates :professional, presence: true
-	validate :future_date
+	validate :validate_future_date
 
-	def future_date
+	def validate_future_date
 		if date === nil
 			errors.add(:date, "Please select a date")
 		elsif date < DateTime.now
 			errors.add(:date, I18n.t(:reservation_fail))
 		end
 	end
+
+	scope :past, -> { where("date < ?", DateTime.now).order("date ASC") }
+
+	scope :future, -> { where("date > ?", DateTime.now).order("date ASC") }
 end
 
 
