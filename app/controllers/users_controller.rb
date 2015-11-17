@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
-  before_action :is_same_user?, only: [:edit]
-   
+	before_action :authenticate_user!, except: [:pro_sign_up]
+  before_action :is_same_user?, except: [:pro_sign_up]
+
   def show
   	@user = current_user
   end
@@ -52,15 +52,22 @@ class UsersController < ApplicationController
     render :edit_profpic
   end
 
-  def destroy
-    @user = current_user
-    @user.destroy!
-    redirect_to root_path, notice: I18n.t(:user_delete)
-  end
+  # def destroy
+  #   @user = current_user
+  #   @user.destroy!
+  #   redirect_to root_path, notice: I18n.t(:user_delete)
+  # end
 
+  def create
+    User.create(user_params)
+  end
   private
 
   def user_params
-    params.require(:user).permit(:name, :last_name, :password, :password_confirmation, :current_password, :prof_pic)
+    params.require(:user).permit(:name, :last_name, :password, :password_confirmation, :current_password, :prof_pic, professional_attributes: [:title, :description, :prof_pic, :price_hr, :location])
+  end
+
+    def sign_up_params
+    params.require(resource_name).permit(:name, :email, :last_name, :password, :password_confirmation, :current_password, :prof_pic, professional_attributes: [:title, :description, :prof_pic, :price_hr, :location])
   end
 end

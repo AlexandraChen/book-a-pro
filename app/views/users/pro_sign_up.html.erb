@@ -3,8 +3,7 @@
     <div class="col-sm-4 col-sm-offset-4">
     <h2><%= t("sign_up") %></h2>
     <br>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <%= form_for @user do |f| %>
 
       <div class="field">
         <%= f.label t("full_name") %><br />
@@ -30,30 +29,15 @@
       </div>
       <br>
       <div class="field">
-      <%= f.label t("profile_pic") %>
-      <%= f.file_field :prof_pic %>
+      <%= f.label "Profile picture" %>
+      <%= f.file_field t("Foto de perfil") %>
        </div>
       <br />
-       <h2>Create Professional Profile</h2>
-        <%= f.fields_for :professional do |pro| %>
-          <%= pro.label t("profile_pic") %>
-          <%= pro.file_field :prof_pic %>
-          <%= pro.label t("title") %>
-          <%= pro.text_field :title, class: "form-control", placeholder: t("title") %>
-          <%= pro.label :description %>
-          <%= pro.text_area :description, class: "form-control", placeholder: "Describe yourself and the services you offer"%>
-          <%= pro.label "Price per hour" %>
-          <%= pro.number_field :price_hr, class: "form-control", placeholder:"$/hr" %>
-          <%= pro.label :location %>
-          <%= pro.text_field :location, class: "form-control", placeholder:"Location or neighborhood" %>
-          <br>
-        <% end %>
       <div class="actions">
         <%= f.submit t("sign_up"), class: "btn btn-default col-sm-12", id: "submit" %>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

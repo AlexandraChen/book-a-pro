@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_one :professional, dependent: :destroy
+  accepts_nested_attributes_for :professional
   has_many :reservations, dependent: :destroy
   has_many :reviews
   validates :email, presence: true, length: {maximum: 250}
