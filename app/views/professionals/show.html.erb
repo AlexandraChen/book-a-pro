@@ -26,7 +26,9 @@
 		<div class="col-sm-7 pro-details">
 			<div class="row">
 				<div class="col-sm-6">
-					<% unless @pro_user.user.last_name %>
+					<% if @pro_user.user.last_name %>
+						<p class="pro-name"><%= @pro_user.user.name%> <%= @pro_user.user.last_name%></p>
+					<% else %>
 						<% if @pro_user.user.name.split(" ").length > 1 %>
 							<p class="pro-name-profile"><%= @pro_user.user.name.split(" ").first.capitalize %> <%= @pro_user.user.name.split(" ").second.capitalize %></p>
 						<% else %>
