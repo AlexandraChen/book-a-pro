@@ -85,6 +85,13 @@ es:
   make_reservation: "Hacer reservación"
   review_error: "Necesitas haber contratado a este profesional para poder escribir una reseña."
   no_reviews: "no tiene reseñas. ¡Escribe su primera reseña!"
+  reservation_made: "Acabas de hacer una reserva con"
+  reservation_date: "Día de la reservación"
+  you_can_contact: "Puedes contactar a"
+  with_this_email: "con este email:"
+  sign_in_to_account: "Puedes iniciar sesión a tu cuenta de"
+  check_reservation: "y revisar tus reservaciones cuando quieras."
+  made_reservation_with_you: "hizo una reservación contigo."
 
 
 

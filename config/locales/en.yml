@@ -106,6 +106,13 @@ en:
   make_reservation: "Make a reservation"
   review_error: "You need to make a reservation in order to write a review"
   no_reviews: "has 0 reviews. Write the first one!"
+  reservation_made: "You just made a reservation with"
+  reservation_date: "Date of reservation"
+  you_can_contact: "You can contact"
+  with_this_email: "with this email:"
+  sign_in_to_account: "You can sign in to your"
+  check_reservation: "account and check your reservations whenever you want."
+  made_reservation_with_you: "made a reservation with you."
 
 
 

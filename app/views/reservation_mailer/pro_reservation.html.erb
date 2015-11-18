@@ -1,5 +1,6 @@
-<h3> Hi, <%= @reservation.professional.user.name %>!</h3>
-<p><%= @reservation.user.name %> made a reservation with you. <strong>Date of reservation <%= @reservation.date.strftime("%d/%m/%y") %></strong> </p>
-<p>You can contact <%= @reservation.user.name %> with this email <%= @reservation.user.email %></p>
+<h3> <%= t("hi") %> <%= @reservation.professional.user.name %>!</h3>
+<p><%= @reservation.user.name %> <%= t("made_reservation_with_you") %><strong> <%= t("reservation_date") %> <%= @reservation.date.strftime("%d/%m/%y") %></strong> </p>
+<p><%= t("you_can_contact") %> <%= @reservation.user.name %> <%= t("with_this_email") %> </p>
 
-<p>You can sign in to your <a href="https://bookapro.herokuapp.com"> Book-a-Pro </a> account and check your reservations whenever you want.</p>
+<p><%= t("sign_in_to_account") %> <a href="https://bookapro.xyz"> Book-a-Pro </a> <%= t("check_reservation") %> </p>
+
