@@ -13,7 +13,7 @@
 						<% if pro.user.name.split(" ").length > 1 %>
 							<p class="pro-name"><%= pro.user.name.split(" ").first.capitalize %> <%= pro.user.name.split(" ").second.capitalize %></p>
 						<% else %>
-							<p class="pro-name"><%= pro.user.name.split(" ").first.capitalize %>
+							<p class="pro-name"><%= pro.user.name.capitalize %>
 						<% end %>
 					<% end %>
 						<p class="pro-title"><%= pro.title %></p>

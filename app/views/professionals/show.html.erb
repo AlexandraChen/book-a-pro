@@ -27,9 +27,11 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<% unless @pro_user.user.last_name %>
-						<p class="pro-name-profile"><%= @pro_user.user.name.split(" ").first.capitalize %> <%= @pro_user.user.name.split(" ").second.capitalize %></p>
-					<% else %>
-						<p class="pro-name-profile"><%= @pro_user.user.name%> <%= @pro_user.user.last_name%></p>
+						<% if @pro_user.user.name.split(" ").length > 1 %>
+							<p class="pro-name-profile"><%= @pro_user.user.name.split(" ").first.capitalize %> <%= @pro_user.user.name.split(" ").second.capitalize %></p>
+						<% else %>
+							<p class="pro-name"><%= @pro_user.user.name.capitalize %>
+						<% end %>
 					<% end %>
 				</div>
 			<% if current_user && current_user.id === @pro_user.user_id %>
